@@ -1,65 +1,65 @@
-import Image from "next/image";
+import { Hero } from "@/components/sections/Hero";
+import { ServicesBar } from "@/components/sections/ServicesBar";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { ConditionsGrid } from "@/components/sections/ConditionsGrid";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { InsuranceBanner } from "@/components/sections/InsuranceBanner";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { CTASection } from "@/components/sections/CTASection";
 
-export default function Home() {
+const homepageFAQs = [
+  {
+    question: "How quickly can I get an appointment?",
+    answer:
+      "New patient appointments are often available within one week. Same-day or next-day appointments are sometimes available depending on scheduling. Call us at (734) 331-6037 to check current availability.",
+  },
+  {
+    question: "Do you accept my insurance?",
+    answer:
+      "We accept most major insurance plans including Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, Humana, Medicare, Medicaid, Priority Health, HAP, and Molina Healthcare. Contact us to verify your specific coverage.",
+  },
+  {
+    question: "What happens at a psychiatric evaluation?",
+    answer:
+      "During your initial psychiatric evaluation, your psychiatrist will review your medical history, discuss your symptoms and concerns, and work with you to develop a personalized treatment plan. The visit typically lasts 45-60 minutes.",
+  },
+  {
+    question: "Do you offer telehealth appointments?",
+    answer:
+      "Yes, we offer telepsychiatry (virtual visits) for patients throughout Michigan. Telehealth appointments are conducted via secure video and offer the same quality of care as in-person visits.",
+  },
+  {
+    question: "What conditions do you treat?",
+    answer:
+      "We specialize in ADHD, anxiety, depression, and bipolar disorder. We also treat PTSD and schizophrenia. Our services include psychiatric evaluations, medication management, ADHD testing, and GeneSight genetic testing.",
+  },
+  {
+    question: "How do I get started as a new patient?",
+    answer:
+      "Getting started is easy. You can book an appointment online, call us at (734) 331-6037, or fill out our contact form. We will help you complete intake paperwork and schedule your first evaluation.",
+  },
+  {
+    question: "What is GeneSight testing?",
+    answer:
+      "GeneSight is a pharmacogenomic test that analyzes how your genes may affect your response to certain psychiatric medications. This helps your psychiatrist make more informed decisions about which medications may work best for you.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Hero />
+      <ServicesBar />
+      <WhyChooseUs />
+      <ConditionsGrid />
+      <Testimonials />
+      <InsuranceBanner />
+      <FAQSection
+        title="Frequently Asked Questions"
+        subtitle="Find answers to common questions about our practice and services."
+        faqs={homepageFAQs}
+      />
+      <CTASection />
+    </>
   );
 }
