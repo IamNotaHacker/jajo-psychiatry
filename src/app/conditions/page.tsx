@@ -1,99 +1,136 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { ArrowUpRight } from "lucide-react";
+import { PageHero } from "@/components/layout/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { CONDITIONS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Mental Health Conditions We Treat | Farmington Hills, MI — Jajo Psychiatry",
+  title: "Mental Health Conditions We Treat | Farmington Hills, MI",
   description:
-    "Jajo Psychiatry treats ADHD, anxiety, depression, bipolar disorder, PTSD, and schizophrenia in Farmington Hills, MI. Compassionate psychiatric care and medication management for adults.",
+    "Jajo Psychiatry treats ADHD, anxiety, depression, bipolar disorder, PTSD, and schizophrenia in Farmington Hills, MI. Compassionate psychiatric care for adults.",
+};
+
+const conditionImages: Record<string, string> = {
+  adhd: "/images/ai/office-detail.jpg",
+  anxiety: "/images/ai/nature-calm.jpg",
+  depression: "/images/ai/window-light.jpg",
+  "bipolar-disorder": "/images/ai/abstract-calm.jpg",
+  ptsd: "/images/ai/texture-warm.jpg",
+  schizophrenia: "/images/ai/hero-main.jpg",
 };
 
 export default function ConditionsPage() {
   return (
-    <>
-      <section className="bg-white py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ name: "Conditions", href: "/conditions" }]} />
+    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+      <PageHero
+        breadcrumbs={[{ name: "Conditions", href: "/conditions" }]}
+        eyebrow="What We Treat"
+        title="Specialized care for"
+        titleEm="complex minds."
+        description="Every person's experience is different. We take the time to understand your unique symptoms, history, and goals before recommending a treatment plan."
+        image="/images/ai/nature-calm.jpg"
+      />
 
-          <div className="max-w-3xl mb-12">
-            <h1 className="font-[var(--font-heading)] text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Mental Health Conditions We Treat
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              At Jajo Psychiatry, we provide expert psychiatric care for a range of mental
-              health conditions. Every person&apos;s experience is different, which is why we
-              take the time to understand your unique symptoms, history, and goals before
-              recommending a treatment plan. Whether you are seeking answers for the first
-              time or looking for better management of a known condition, we are here to help.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CONDITIONS.map((condition) => (
+      {/* Conditions bento */}
+      <section className="px-6 lg:px-10 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {CONDITIONS.map((condition, i) => (
               <Link
                 key={condition.slug}
                 href={`/conditions/${condition.slug}`}
-                className="group block bg-white rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-md transition-all duration-200"
+                className="group relative rounded-2xl overflow-hidden aspect-[4/5]"
               >
-                <h2 className="font-[var(--font-heading)] text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {condition.fullTitle}
-                </h2>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  {condition.shortDescription}
-                </p>
-                <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  Learn About Treatment{" "}
-                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-                </span>
+                <Image
+                  src={conditionImages[condition.slug] || "/images/ai/nature-calm.jpg"}
+                  alt={condition.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1F1A14]/85 via-[#1F1A14]/20 to-transparent" />
+                <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
+                  <span className="text-xs tracking-wider uppercase text-[#E8C9A0]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <ArrowUpRight className="h-5 w-5 text-[#E8C9A0] group-hover:rotate-45 transition-transform" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h2 className="font-editorial text-3xl mb-2 leading-[1.1]">
+                    {condition.title}
+                  </h2>
+                  <p className="text-sm text-white/60 leading-relaxed">
+                    {condition.shortDescription}
+                  </p>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-muted py-16 sm:py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Our Approach to Treatment
-          </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Treatment at Jajo Psychiatry always begins with a thorough{" "}
-            <Link href="/services/psychiatric-evaluations" className="text-primary hover:underline">
-              psychiatric evaluation
-            </Link>{" "}
-            so we can understand the full picture. From there, we develop a personalized plan
-            that may include{" "}
-            <Link href="/services/medication-management" className="text-primary hover:underline">
-              medication management
-            </Link>
-            ,{" "}
-            <Link href="/services/genesight-testing" className="text-primary hover:underline">
-              GeneSight genetic testing
-            </Link>{" "}
-            to guide medication choices, and ongoing follow-up care through{" "}
-            <Link href="/services/in-person-psychiatry" className="text-primary hover:underline">
-              in-person
-            </Link>{" "}
-            or{" "}
-            <Link href="/services/telepsychiatry" className="text-primary hover:underline">
-              telepsychiatry
-            </Link>{" "}
-            visits.
-          </p>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            We serve patients across Michigan from our Farmington Hills office and through
-            virtual appointments. New patients are typically seen within one week.
-          </p>
+      {/* Approach */}
+      <section className="px-6 lg:px-10 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-4">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-4">
+                — Our Approach
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <p className="font-editorial text-3xl lg:text-[2.5rem] leading-[1.2] mb-6">
+                Treatment always begins with a{" "}
+                <em className="italic text-[#8B6F4E]">
+                  thorough psychiatric evaluation
+                </em>
+                .
+              </p>
+              <p className="text-[#1F1A14]/60 leading-relaxed mb-4">
+                From there, we develop a personalized plan that may include{" "}
+                <Link
+                  href="/services/medication-management"
+                  className="underline underline-offset-4 decoration-[#8B6F4E] hover:text-[#1F1A14]"
+                >
+                  medication management
+                </Link>
+                ,{" "}
+                <Link
+                  href="/services/genesight-testing"
+                  className="underline underline-offset-4 decoration-[#8B6F4E] hover:text-[#1F1A14]"
+                >
+                  GeneSight genetic testing
+                </Link>{" "}
+                to guide medication choices, and ongoing follow-up care through{" "}
+                <Link
+                  href="/services/in-person-psychiatry"
+                  className="underline underline-offset-4 decoration-[#8B6F4E] hover:text-[#1F1A14]"
+                >
+                  in-person
+                </Link>{" "}
+                or{" "}
+                <Link
+                  href="/services/telepsychiatry"
+                  className="underline underline-offset-4 decoration-[#8B6F4E] hover:text-[#1F1A14]"
+                >
+                  telepsychiatry
+                </Link>{" "}
+                visits.
+              </p>
+              <p className="text-[#1F1A14]/60 leading-relaxed">
+                We serve patients across Michigan. New patients are typically
+                seen within one week.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       <CTASection
-        headline="Ready to Start Treatment?"
+        headline="Ready to start treatment?"
         subheadline="Schedule a psychiatric evaluation and take the first step toward feeling better."
       />
-    </>
+    </div>
   );
 }

@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  Heart,
-  Users,
-  Video,
-  Building2,
-  Brain,
-  ShieldCheck,
-  ArrowRight,
-} from "lucide-react";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Button } from "@/components/ui/Button";
-import { TrustBadges } from "@/components/ui/TrustBadges";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { PageHero } from "@/components/layout/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { PRACTICE } from "@/lib/constants";
+import {
+  FlourishOrnament,
+  BotanicalSprig,
+  GlyphWatermark,
+} from "@/components/ui/Ornaments";
 
 export const metadata: Metadata = {
   title: "About Our Practice",
@@ -23,230 +19,252 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: Heart,
-    title: "Patient-Centered Care",
+    num: "01",
+    title: "Patient-centered",
     description:
       "Every treatment plan is tailored to your unique needs, goals, and lifestyle. We take the time to listen and understand what matters most to you.",
   },
   {
-    icon: Brain,
-    title: "Evidence-Based Treatment",
+    num: "02",
+    title: "Evidence-based",
     description:
       "Our approach is grounded in the latest psychiatric research and clinical guidelines, ensuring you receive the most effective care available.",
   },
   {
-    icon: ShieldCheck,
-    title: "Compassionate Approach",
+    num: "03",
+    title: "Compassionate",
     description:
       "We create a welcoming, judgment-free environment where you can feel comfortable discussing your mental health concerns openly.",
   },
   {
-    icon: Users,
-    title: "Collaborative Partnership",
+    num: "04",
+    title: "Collaborative",
     description:
-      "We believe in working together with our patients to develop treatment plans that align with your values and preferences.",
-  },
-];
-
-const services = [
-  {
-    icon: Video,
-    title: "Telepsychiatry",
-    description:
-      "Convenient virtual appointments from anywhere in Michigan through secure video visits.",
-  },
-  {
-    icon: Building2,
-    title: "In-Person Visits",
-    description:
-      "Face-to-face psychiatric care at our comfortable Farmington Hills office.",
+      "We work together with our patients to develop treatment plans that align with your values and preferences.",
   },
 ];
 
 export default function AboutPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-secondary py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ name: "About", href: "/about" }]} />
-          <div className="max-w-3xl">
-            <h1 className="font-[var(--font-heading)] text-4xl sm:text-5xl font-bold text-foreground mb-4">
-              About Jajo Psychiatry
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              At Jajo Psychiatry, we are dedicated to providing personalized,
-              evidence-based psychiatric care to adults throughout Michigan. Our
-              practice combines clinical expertise with genuine compassion to
-              help you achieve lasting mental wellness.
-            </p>
-            <TrustBadges variant="inline" count={4} />
-          </div>
-        </div>
-      </section>
+    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+      <PageHero
+        breadcrumbs={[{ name: "About", href: "/about" }]}
+        eyebrow="Our Practice"
+        title="Psychiatric care, offered with"
+        titleEm="patience."
+        description="Personalized, evidence-based psychiatric care for adults throughout Michigan. Clinical expertise, genuine compassion."
+        image="/images/ai/window-light.jpg"
+      />
 
-      {/* Mission & Philosophy */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-primary-light text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-                <Heart className="h-4 w-4" />
-                Our Mission
+      {/* Mission */}
+      <section className="relative px-6 lg:px-10 py-20 lg:py-28 overflow-hidden">
+        <BotanicalSprig className="absolute -left-20 top-12 w-[440px] h-[440px] text-[#1F1A14] opacity-[0.05] hidden lg:block" />
+        <div className="relative max-w-[1400px] mx-auto">
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-4">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-5">
+                — Our Mission
+              </p>
+              <FlourishOrnament className="hidden lg:flex mb-8" />
+              <p className="hidden lg:block font-editorial italic text-[#8B6F4E]/80 text-2xl leading-snug max-w-[18rem] mb-6">
+                &ldquo;We listen to your story.&rdquo;
+              </p>
+              <p className="hidden lg:block text-[10px] tracking-[0.2em] uppercase text-[#1F1A14]/40 mb-10">
+                — The Jajo Psychiatry team
+              </p>
+              <div className="hidden lg:block space-y-5 max-w-[16rem]">
+                <div>
+                  <p className="font-editorial text-3xl text-[#1F1A14]">20+</p>
+                  <p className="text-xs text-[#1F1A14]/55 mt-1">
+                    Years caring for Michigan
+                  </p>
+                </div>
+                <div className="h-px bg-[#1F1A14]/10" />
+                <div>
+                  <p className="font-editorial text-3xl text-[#1F1A14]">8</p>
+                  <p className="text-xs text-[#1F1A14]/55 mt-1">
+                    Providers on our team
+                  </p>
+                </div>
+                <div className="h-px bg-[#1F1A14]/10" />
+                <div>
+                  <p className="font-editorial text-3xl text-[#1F1A14]">1 wk</p>
+                  <p className="text-xs text-[#1F1A14]/55 mt-1">
+                    Average new-patient wait
+                  </p>
+                </div>
               </div>
-              <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                Personalized Psychiatric Care That Puts You First
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                We founded Jajo Psychiatry with a clear mission: to make
-                high-quality psychiatric care accessible, personalized, and
-                effective. We understand that every patient is unique, and
-                cookie-cutter approaches simply do not work.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Our philosophy centers on building genuine therapeutic
-                relationships, using the latest evidence-based treatments, and
-                empowering patients to take an active role in their mental
-                health. Whether you need help managing ADHD, anxiety,
-                depression, or another condition, we are here to support you
-                every step of the way.
-              </p>
-              <Button href="/about/providers" variant="primary" size="md">
-                Meet Our Providers
-                <ArrowRight className="h-4 w-4" />
-              </Button>
             </div>
-            <div className="bg-muted rounded-2xl aspect-[4/3] flex items-center justify-center">
-              <p className="text-muted-foreground text-sm">
-                Practice photo placeholder
+            <div className="lg:col-span-8">
+              <p className="font-editorial text-3xl lg:text-[2.5rem] leading-[1.2] mb-6">
+                Founded by Dr. Raad Jajo, bringing{" "}
+                <em className="italic text-[#8B6F4E]">
+                  20+ years of psychiatric experience
+                </em>{" "}
+                to every patient.
               </p>
+              <p className="text-[#1F1A14]/60 leading-relaxed mb-6 max-w-2xl">
+                At Jajo Psychiatry, we are committed to helping you achieve
+                optimal wellness, balanced mental health, and an improved state
+                of mind. We understand that every individual is unique &mdash;
+                we listen to your story and develop comprehensive short and
+                long-term plans with your goals in mind.
+              </p>
+              <p className="text-[#1F1A14]/60 leading-relaxed mb-8 max-w-2xl">
+                We stay updated on the latest studies and pharmaceutical
+                advancements, and we value the benefits of holistic approaches,
+                behavioral therapy, diet, exercise, and sleep quality alongside
+                traditional medicine.
+              </p>
+              <Link
+                href="/about/providers"
+                className="inline-flex items-center gap-2 text-[#1F1A14] font-semibold border-b border-[#1F1A14] pb-0.5"
+              >
+                Meet our providers
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-16 sm:py-20 bg-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              What Guides Our Care
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Our core values shape every interaction and treatment decision at
-              Jajo Psychiatry.
+      {/* Values grid */}
+      <section className="relative px-6 lg:px-10 py-20 overflow-hidden">
+        <GlyphWatermark
+          className="-right-12 -bottom-20 hidden lg:block"
+          glyph="J"
+          size="28rem"
+          opacity={0.04}
+        />
+        <div className="relative max-w-[1400px] mx-auto">
+          <div className="mb-14">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              — What Guides Our Care
             </p>
+            <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05] max-w-2xl">
+              Four principles behind<br />
+              <em className="italic text-[#8B6F4E]">every visit.</em>
+            </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
             {values.map((value) => (
               <div
-                key={value.title}
-                className="bg-white rounded-xl border border-border p-6"
+                key={value.num}
+                className="bg-[#F8F4EC] p-8 lg:p-10 flex items-start gap-6"
               >
-                <div className="h-12 w-12 rounded-lg bg-primary-light flex items-center justify-center mb-4">
-                  <value.icon className="h-6 w-6 text-primary" />
+                <span className="font-editorial text-3xl text-[#1F1A14]/25 shrink-0">
+                  {value.num}
+                </span>
+                <div>
+                  <h3 className="font-editorial text-2xl mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-sm text-[#1F1A14]/60 leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {value.description}
-                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* In-Person + Telehealth */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              Care on Your Terms
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Choose the appointment format that works best for your schedule
-              and comfort level.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-white rounded-xl border border-border p-8 text-center"
-              >
-                <div className="h-14 w-14 rounded-full bg-primary-light flex items-center justify-center mx-auto mb-4">
-                  <service.icon className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg text-foreground mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
+      {/* Care formats with image */}
+      <section className="px-6 lg:px-10 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid lg:grid-cols-12 gap-6 items-stretch">
+            <div className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-square lg:aspect-auto">
+              <Image
+                src="/images/ai/office-detail.jpg"
+                alt="Our Farmington Hills office"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1F1A14]/50 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <p className="text-xs tracking-wider uppercase text-white/70 mb-1">
+                  Visit Us
+                </p>
+                <p className="font-editorial text-xl leading-tight">
+                  {PRACTICE.address.street}
+                  <br />
+                  {PRACTICE.address.city}, {PRACTICE.address.state}
                 </p>
               </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <p className="text-muted-foreground mb-1">
-              Located at{" "}
-              <span className="text-foreground font-medium">
-                {PRACTICE.address.full}
-              </span>
-            </p>
-            <p className="text-muted-foreground text-sm">
-              {PRACTICE.hours.weekdays} &bull; {PRACTICE.hours.weekends}
-            </p>
+            </div>
+            <div className="lg:col-span-7 bg-[#1F1A14] text-[#F8F4EC] rounded-2xl p-8 lg:p-14">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-4">
+                — Care on Your Terms
+              </p>
+              <h2 className="font-editorial text-3xl lg:text-4xl leading-[1.1] mb-6">
+                In-person or virtual.<br />
+                <em className="italic text-[#E8C9A0]">Always personal.</em>
+              </h2>
+              <p className="text-white/60 leading-relaxed mb-8">
+                Choose the appointment format that works best for your schedule
+                and comfort level. Our Farmington Hills office offers a warm,
+                private setting, while telepsychiatry brings the same quality
+                care to patients anywhere in Michigan.
+              </p>
+              <div className="space-y-4 text-sm text-white/60">
+                <p>
+                  <span className="text-white/80">Hours:</span>{" "}
+                  {PRACTICE.hours.weekdays}
+                </p>
+                <p>
+                  <span className="text-white/80">Weekends:</span> Closed
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Links */}
-      <section className="py-16 sm:py-20 bg-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-3 gap-6">
-            <Link
-              href="/about/providers"
-              className="bg-white rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-sm transition-all group"
-            >
-              <Users className="h-8 w-8 text-primary mb-3" />
-              <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                Our Providers
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Meet our board-certified psychiatric team.
-              </p>
-            </Link>
-            <Link
-              href="/about/why-jajo"
-              className="bg-white rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-sm transition-all group"
-            >
-              <ShieldCheck className="h-8 w-8 text-primary mb-3" />
-              <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                Why Jajo Psychiatry
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Discover what sets our practice apart.
-              </p>
-            </Link>
-            <Link
-              href="/new-patients"
-              className="bg-white rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-sm transition-all group"
-            >
-              <ArrowRight className="h-8 w-8 text-primary mb-3" />
-              <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                New Patients
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Learn what to expect at your first visit.
-              </p>
-            </Link>
+      {/* Quick links */}
+      <section className="px-6 lg:px-10 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                href: "/about/providers",
+                eyebrow: "01",
+                title: "Our Providers",
+                desc: "Meet our board-certified psychiatric team.",
+              },
+              {
+                href: "/about/why-jajo",
+                eyebrow: "02",
+                title: "Why Jajo Psychiatry",
+                desc: "What sets our practice apart.",
+              },
+              {
+                href: "/new-patients",
+                eyebrow: "03",
+                title: "New Patients",
+                desc: "What to expect at your first visit.",
+              },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group bg-[#EADCC2]/50 hover:bg-[#EADCC2] rounded-2xl p-8 transition-colors"
+              >
+                <div className="flex items-start justify-between mb-10">
+                  <span className="text-xs tracking-wider uppercase text-[#8B6F4E]">
+                    {link.eyebrow}
+                  </span>
+                  <ArrowUpRight className="h-5 w-5 text-[#8B6F4E] group-hover:rotate-45 transition-transform" />
+                </div>
+                <h3 className="font-editorial text-2xl mb-2">{link.title}</h3>
+                <p className="text-sm text-[#1F1A14]/60">{link.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       <CTASection />
-    </>
+    </div>
   );
 }

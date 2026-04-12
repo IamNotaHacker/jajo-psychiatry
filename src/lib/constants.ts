@@ -27,12 +27,12 @@ export const PRACTICE = {
 } as const;
 
 export const NAV_ITEMS = [
-  { label: "Home", href: "/" },
   {
     label: "About",
     href: "/about",
     children: [
       { label: "Our Practice", href: "/about" },
+      { label: "Our Founder", href: "/about/founder" },
       { label: "Our Providers", href: "/about/providers" },
       { label: "Why Jajo Psychiatry", href: "/about/why-jajo" },
     ],

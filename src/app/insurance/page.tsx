@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import {
-  Shield,
-  Phone,
-  CheckCircle2,
-  CreditCard,
-  HelpCircle,
-  ArrowRight,
-} from "lucide-react";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
+import { Phone, ArrowUpRight } from "lucide-react";
+import { PageHero } from "@/components/layout/PageHero";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { PRACTICE, INSURANCE_PROVIDERS } from "@/lib/constants";
@@ -16,27 +9,27 @@ import { PRACTICE, INSURANCE_PROVIDERS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Insurance & Payment",
   description:
-    "Jajo Psychiatry accepts Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, Humana, Medicare, Medicaid, and more. Learn about insurance, self-pay options, and billing.",
+    "Jajo Psychiatry accepts Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, Humana, Medicare, Medicaid, and more. Self-pay options available.",
 };
 
 const verifySteps = [
   {
-    number: "1",
-    title: "Contact Our Office",
+    num: "01",
+    title: "Contact our office",
     description:
-      "Call us at (734) 331-6037 or provide your insurance information when scheduling online. Our team will handle the rest.",
+      "Call us at (734) 331-6037 or provide your insurance information when scheduling online.",
   },
   {
-    number: "2",
-    title: "We Verify Your Benefits",
+    num: "02",
+    title: "We verify benefits",
     description:
-      "We will contact your insurance provider to verify your coverage, confirm your copay amount, and check for any pre-authorization requirements.",
+      "We contact your insurance provider to verify coverage, copay, and check for any pre-authorization requirements.",
   },
   {
-    number: "3",
-    title: "Know Before You Go",
+    num: "03",
+    title: "Know before you go",
     description:
-      "Before your appointment, we will let you know your expected out-of-pocket costs so there are no surprises at your visit.",
+      "Before your appointment, we let you know your expected out-of-pocket costs — no surprises.",
   },
 ];
 
@@ -44,22 +37,22 @@ const insuranceFAQs = [
   {
     question: "What insurance plans do you accept?",
     answer:
-      "We accept Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, Humana, Medicare, Medicaid, Priority Health, HAP, Molina Healthcare, and several other plans. If your plan is not listed, please call our office at (734) 331-6037 to check, as we are continually adding new insurance providers.",
+      "Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, Humana, Medicare, Medicaid, Priority Health, HAP, Molina Healthcare, and more. Call (734) 331-6037 to check your specific plan.",
   },
   {
     question: "How do I verify my insurance coverage?",
     answer:
-      "The easiest way is to call our office at (734) 331-6037 with your insurance information. Our team will verify your benefits and let you know about any copays, coinsurance, or deductible amounts. You can also contact your insurance company directly and ask about coverage for outpatient psychiatric services.",
+      "Call our office at (734) 331-6037 with your insurance information. Our team will verify your benefits and let you know about copays, coinsurance, and deductibles.",
   },
   {
     question: "What if my insurance is not accepted?",
     answer:
-      "If we do not accept your specific plan, we offer competitive self-pay rates. We can also provide you with a superbill (detailed receipt) that you can submit to your insurance company for potential out-of-network reimbursement.",
+      "We offer competitive self-pay rates and can provide a superbill (detailed receipt) you can submit to your insurance for potential out-of-network reimbursement.",
   },
   {
     question: "Do you offer self-pay options?",
     answer:
-      "Yes, we offer self-pay options for patients without insurance or who prefer not to use their insurance. Please contact our office for current self-pay rates. Payment is collected at the time of your visit.",
+      "Yes, for patients without insurance or who prefer not to use their insurance. Contact us for current self-pay rates. Payment is collected at the time of your visit.",
   },
   {
     question: "When is payment due?",
@@ -67,126 +60,97 @@ const insuranceFAQs = [
       "Copays and self-pay amounts are collected at the time of your visit. We accept cash, check, and all major credit and debit cards.",
   },
   {
-    question: "Will I have a copay?",
+    question: "Does insurance cover telehealth?",
     answer:
-      "Copay amounts depend on your specific insurance plan. When we verify your insurance before your visit, we will let you know your expected copay amount so you can be prepared.",
-  },
-  {
-    question: "Does insurance cover telehealth appointments?",
-    answer:
-      "Most insurance plans cover telepsychiatry appointments the same as in-person visits. We will verify your telehealth coverage when we check your benefits.",
+      "Most insurance plans cover telepsychiatry appointments the same as in-person visits. We verify your telehealth coverage when we check your benefits.",
   },
   {
     question: "Does insurance cover GeneSight testing?",
     answer:
-      "Many insurance plans cover GeneSight pharmacogenomic testing, and GeneSight also offers a financial assistance program for eligible patients. Your provider can discuss coverage and cost options with you during your appointment.",
-  },
-  {
-    question: "What forms of payment do you accept?",
-    answer:
-      "We accept cash, personal checks, and all major credit and debit cards (Visa, Mastercard, American Express, Discover).",
+      "Many plans cover GeneSight pharmacogenomic testing. GeneSight also offers a financial assistance program for eligible patients.",
   },
 ];
 
 export default function InsurancePage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-secondary py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs
-            items={[{ name: "Insurance & Payment", href: "/insurance" }]}
-          />
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-primary-light text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-              <Shield className="h-4 w-4" />
-              Insurance-Friendly Practice
-            </div>
-            <h1 className="font-[var(--font-heading)] text-4xl sm:text-5xl font-bold text-foreground mb-4">
-              Insurance & Payment
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We accept most major insurance plans and offer self-pay options.
-              Our team will help verify your coverage before your first visit so
-              you know exactly what to expect.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+      <PageHero
+        breadcrumbs={[{ name: "Insurance", href: "/insurance" }]}
+        eyebrow="Insurance-Friendly"
+        title="We accept most"
+        titleEm="major plans."
+        description="Our team helps verify your coverage before your first visit so you know exactly what to expect."
+        image="/images/ai/insurance-hero.jpg"
+      />
 
-      {/* Accepted Insurance */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              Accepted Insurance Plans
+      {/* Accepted plans */}
+      <section className="px-6 lg:px-10 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="mb-12">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              — Accepted Plans
+            </p>
+            <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
+              Most major<br />
+              <em className="italic text-[#8B6F4E]">insurance accepted.</em>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              We work with most major insurance providers. If you do not see your
-              plan listed below, please call us to check.
-            </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
             {INSURANCE_PROVIDERS.map((provider) => (
               <div
                 key={provider}
-                className="bg-white rounded-xl border border-border p-5 text-center flex items-center justify-center"
+                className="bg-[#EADCC2]/50 rounded-2xl p-5 text-center"
               >
-                <div>
-                  <CheckCircle2 className="h-5 w-5 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-medium text-foreground">
-                    {provider}
-                  </span>
-                </div>
+                <p className="text-sm font-medium text-[#1F1A14]">
+                  {provider}
+                </p>
               </div>
             ))}
           </div>
 
-          <div className="text-center">
-            <p className="text-muted-foreground mb-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 bg-[#F8F4EC] border border-[#1F1A14]/10 rounded-2xl p-6">
+            <p className="text-[#1F1A14]/70 text-sm">
               Don&apos;t see your plan?{" "}
-              <span className="text-foreground font-medium">
+              <span className="text-[#1F1A14] font-medium">
                 Call us to check your coverage.
               </span>
             </p>
-            <Button
+            <a
               href={`tel:${PRACTICE.phoneRaw}`}
-              variant="outline"
-              size="md"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium hover:bg-[#3D2E1F] transition-colors"
             >
               <Phone className="h-4 w-4" />
-              Call {PRACTICE.phone}
-            </Button>
+              {PRACTICE.phone}
+            </a>
           </div>
         </div>
       </section>
 
-      {/* How to Verify */}
-      <section className="py-16 sm:py-20 bg-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              How to Verify Your Insurance
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              We make the insurance verification process simple. Here is how it
-              works.
+      {/* Verification steps */}
+      <section className="px-6 lg:px-10 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="mb-12">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              — Simple Process
             </p>
+            <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
+              How to verify<br />
+              <em className="italic text-[#8B6F4E]">your coverage.</em>
+            </h2>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {verifySteps.map((step) => (
               <div
-                key={step.number}
-                className="bg-white rounded-xl border border-border p-6 text-center relative"
+                key={step.num}
+                className="bg-[#EADCC2]/50 rounded-2xl p-8"
               >
-                <div className="h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center text-lg font-bold mx-auto mb-4">
-                  {step.number}
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <span className="font-editorial text-3xl text-[#1F1A14]/30 block mb-6">
+                  {step.num}
+                </span>
+                <h3 className="font-editorial text-2xl mb-2">{step.title}</h3>
+                <p className="text-sm text-[#1F1A14]/60 leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -195,106 +159,61 @@ export default function InsurancePage() {
         </div>
       </section>
 
-      {/* Self-Pay */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-                <CreditCard className="h-4 w-4" />
-                Self-Pay Options
+      {/* Self-pay block */}
+      <section className="px-6 lg:px-10 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="bg-[#1F1A14] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16">
+            <div className="grid lg:grid-cols-12 gap-10">
+              <div className="lg:col-span-7">
+                <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-4">
+                  — Self-Pay
+                </p>
+                <h2 className="font-editorial text-3xl lg:text-5xl leading-[1.05] mb-6">
+                  No insurance?<br />
+                  <em className="italic text-[#E8C9A0]">No problem.</em>
+                </h2>
+                <p className="text-white/60 leading-relaxed mb-8 max-w-xl">
+                  We believe everyone deserves access to quality psychiatric
+                  care. If you don&apos;t have insurance or prefer not to use
+                  it, we offer competitive self-pay rates for all services.
+                </p>
+                <a
+                  href={`tel:${PRACTICE.phoneRaw}`}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#E8C9A0] text-[#1F1A14] text-sm font-semibold hover:bg-white transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call for Self-Pay Rates
+                </a>
               </div>
-              <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                No Insurance? No Problem.
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                We believe everyone deserves access to quality psychiatric care.
-                If you do not have insurance or prefer not to use it, we offer
-                competitive self-pay rates for all of our services.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-foreground">
-                    Transparent, competitive pricing
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-foreground">
-                    Superbills provided for out-of-network reimbursement
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-foreground">
-                    Cash, check, and all major credit cards accepted
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-foreground">
-                    Payment collected at time of service
-                  </span>
-                </li>
-              </ul>
-              <Button
-                href={`tel:${PRACTICE.phoneRaw}`}
-                variant="primary"
-                size="md"
-              >
-                <Phone className="h-4 w-4" />
-                Call for Self-Pay Rates
-              </Button>
-            </div>
-            <div className="bg-white rounded-xl border border-border p-8">
-              <HelpCircle className="h-8 w-8 text-primary mb-4" />
-              <h3 className="font-semibold text-lg text-foreground mb-3">
-                Out-of-Network Benefits
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                If we are not in-network with your insurance plan, you may still
-                have out-of-network benefits that cover a portion of your costs.
-                Here is how it works:
-              </p>
-              <ol className="space-y-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="h-6 w-6 rounded-full bg-primary-light text-primary text-xs font-bold flex items-center justify-center shrink-0">
-                    1
-                  </span>
-                  You pay the self-pay rate at your visit.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="h-6 w-6 rounded-full bg-primary-light text-primary text-xs font-bold flex items-center justify-center shrink-0">
-                    2
-                  </span>
-                  We provide a superbill with all required codes and details.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="h-6 w-6 rounded-full bg-primary-light text-primary text-xs font-bold flex items-center justify-center shrink-0">
-                    3
-                  </span>
-                  You submit the superbill to your insurance for reimbursement.
-                </li>
-              </ol>
+              <div className="lg:col-span-5 space-y-4">
+                {[
+                  "Transparent, competitive pricing",
+                  "Superbills for out-of-network reimbursement",
+                  "Cash, check, and major credit cards",
+                  "Payment collected at time of service",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 py-3 border-b border-white/10"
+                  >
+                    <span className="text-[#E8C9A0] text-sm">—</span>
+                    <span className="text-sm text-white/80 leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <FAQSection
-        title="Insurance & Payment FAQs"
-        subtitle="Common questions about insurance coverage, billing, and payment options."
-        faqs={insuranceFAQs}
-        className="bg-muted"
-      />
+      <FAQSection faqs={insuranceFAQs} />
 
       <CTASection
-        headline="Questions About Your Coverage?"
-        subheadline="Our team is happy to help verify your insurance and discuss payment options. Give us a call."
-        variant="light"
+        headline="Questions about your coverage?"
+        subheadline="Our team is happy to help verify your insurance and discuss payment options."
       />
-    </>
+    </div>
   );
 }

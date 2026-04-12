@@ -1,33 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  /* Jajo brand colors */
-  --background: #FAFAF8;
-  --foreground: #0A104A;
-  --primary: #26BBE6;
-  --primary-foreground: #FFFFFF;
-  --primary-light: #E8F7FC;
-  --primary-dark: #1A9AC4;
-  --navy: #0A104A;
-  --navy-light: #1A1F6A;
-  --secondary: #F5F3EE;
-  --secondary-foreground: #0A104A;
-  --accent: #26BBE6;
-  --accent-foreground: #FFFFFF;
-  --accent-light: #E8F7FC;
-  --muted: #F0EDE8;
-  --muted-foreground: #5A5E7A;
-  --border: #DDD8CE;
-  --ring: #26BBE6;
+  /* Jajo warm editorial palette */
+  --background: #F8F4EC;
+  --foreground: #1F1A14;
+  --cream: #F8F4EC;
+  --cream-deep: #EADCC2;
+  --cream-soft: #F5EDE0;
+  --ink: #1F1A14;
+  --ink-light: #3D2E1F;
+  --muted: #8B6F4E;
+  --muted-soft: #B5A899;
+  --gold: #E8C9A0;
+  --gold-deep: #C09668;
+  --sage: #8B9A86;
+
+  /* Legacy aliases for old components still referencing these */
+  --primary: #1F1A14;
+  --primary-foreground: #F8F4EC;
+  --primary-light: #EADCC2;
+  --primary-dark: #000000;
+  --navy: #1F1A14;
+  --navy-light: #3D2E1F;
+  --secondary: #EADCC2;
+  --secondary-foreground: #1F1A14;
+  --accent: #C09668;
+  --accent-foreground: #F8F4EC;
+  --accent-light: #EADCC2;
+  --muted-foreground: #8B6F4E;
+  --border: #E4DACB;
+  --ring: #1F1A14;
   --card: #FFFFFF;
-  --card-foreground: #0A104A;
-  --destructive: #DC2626;
-  --radius: 0.75rem;
+  --card-foreground: #1F1A14;
+  --destructive: #B84C3A;
+  --radius: 1rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-cream-soft: var(--cream-soft);
+  --color-ink: var(--ink);
+  --color-ink-light: var(--ink-light);
+  --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-sage: var(--sage);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-light: var(--primary-light);
@@ -39,7 +60,6 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-light: var(--accent-light);
-  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
@@ -54,6 +74,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-feature-settings: "ss01", "ss02";
 }
 
 html {
@@ -61,11 +82,18 @@ html {
 }
 
 *:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--ink);
   outline-offset: 2px;
 }
 
-/* Noise texture overlay for sections */
+/* Editorial serif utility */
+.font-editorial {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+/* Fine grain overlay for warm sections */
 .noise-bg {
   position: relative;
 }
@@ -73,9 +101,9 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 256px 256px;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
   pointer-events: none;
   z-index: 1;
 }
@@ -84,27 +112,11 @@ html {
   z-index: 2;
 }
 
-/* Glass card effect */
-.glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #26BBE6 0%, #0A104A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Decorative line */
+/* Accent hairline */
 .accent-line {
   width: 48px;
-  height: 3px;
-  background: linear-gradient(90deg, #26BBE6, #0A104A);
-  border-radius: 2px;
+  height: 1px;
+  background: var(--ink);
 }
 
 /* Image overlay gradient */
@@ -115,6 +127,6 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(10, 16, 74, 0.7) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(31, 26, 20, 0.75) 100%);
   border-radius: inherit;
 }

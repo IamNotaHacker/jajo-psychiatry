@@ -1,5 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Phone, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { PRACTICE } from "@/lib/constants";
 
 interface CTASectionProps {
@@ -9,60 +10,93 @@ interface CTASectionProps {
 }
 
 export function CTASection({
-  headline = "Ready to Take the First Step?",
-  subheadline = "Schedule your appointment today and start your journey toward better mental health.",
+  headline = "Take the first step today.",
+  subheadline = "Schedule your appointment and begin your journey toward better mental health.",
   variant = "primary",
 }: CTASectionProps) {
-  const isPrimary = variant === "primary";
+  if (variant === "light") {
+    return (
+      <section className="px-6 lg:px-10 py-20 bg-[#F8F4EC]">
+        <div className="max-w-[1400px] mx-auto text-center">
+          <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-4">
+            — Ready to begin?
+          </p>
+          <h2 className="font-editorial text-3xl lg:text-5xl leading-[1.1] text-[#1F1A14] mb-8">
+            {headline}
+          </h2>
+          <p className="text-[#1F1A14]/60 max-w-xl mx-auto mb-10">
+            {subheadline}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href={PRACTICE.bookingUrl}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium hover:bg-[#3D2E1F] transition-colors"
+            >
+              <Calendar className="h-4 w-4" />
+              Book Appointment
+            </Link>
+            <a
+              href={`tel:${PRACTICE.phoneRaw}`}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-[#1F1A14]/20 text-[#1F1A14] text-sm hover:bg-[#1F1A14]/5 transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              {PRACTICE.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <section
-      className={
-        isPrimary
-          ? "relative bg-navy noise-bg py-20 sm:py-24 overflow-hidden"
-          : "bg-secondary py-16 sm:py-20"
-      }
-    >
-      {isPrimary && (
-        <>
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-2xl" />
-        </>
-      )}
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {isPrimary && <div className="accent-line mx-auto mb-6" />}
-        <h2
-          className={`font-[var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
-            isPrimary ? "text-white" : "text-foreground"
-          }`}
-        >
-          {headline}
-        </h2>
-        <p
-          className={`text-lg mb-10 max-w-xl mx-auto ${
-            isPrimary ? "text-white/50" : "text-muted-foreground"
-          }`}
-        >
-          {subheadline}
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            href={PRACTICE.bookingUrl}
-            size="lg"
-            className={isPrimary ? "bg-primary hover:bg-primary-dark shadow-lg shadow-primary/25" : "bg-primary hover:bg-primary-dark"}
-          >
-            <Calendar className="h-5 w-5" />
-            Book Appointment
-          </Button>
-          <Button
-            href={`tel:${PRACTICE.phoneRaw}`}
-            variant="outline"
-            size="lg"
-            className={isPrimary ? "border-white/20 text-white hover:bg-white/10" : ""}
-          >
-            <Phone className="h-5 w-5" />
-            Call {PRACTICE.phone}
-          </Button>
+    <section className="relative px-6 lg:px-10 pb-20 pt-10">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="relative rounded-[2rem] overflow-hidden">
+          <div className="relative aspect-[16/9] min-h-[400px] md:aspect-[16/7]">
+            <Image
+              src="/images/ai/cta-warm.jpg"
+              alt=""
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1F1A14]/90 via-[#3D2E1F]/70 to-[#1F1A14]/90" />
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center px-6">
+            <div className="text-center max-w-3xl">
+              <p className="text-xs tracking-[0.4em] uppercase text-[#E8C9A0] mb-5">
+                — Ready to begin?
+              </p>
+              <h2 className="font-editorial text-white text-4xl lg:text-6xl leading-[1.05] mb-6">
+                {headline.includes("today") ? (
+                  <>
+                    {headline.split("today")[0]}
+                    <em className="italic text-[#E8C9A0]">today.</em>
+                  </>
+                ) : (
+                  headline
+                )}
+              </h2>
+              <p className="text-white/60 max-w-xl mx-auto mb-10 text-base">
+                {subheadline}
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href={PRACTICE.bookingUrl}
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#F8F4EC] text-[#1F1A14] text-sm font-semibold hover:bg-white transition-colors"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Book an Appointment
+                </Link>
+                <a
+                  href={`tel:${PRACTICE.phoneRaw}`}
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/30 text-white text-sm font-medium hover:bg-white/5 transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  {PRACTICE.phone}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

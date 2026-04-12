@@ -2,10 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Phone, Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { PRACTICE, NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -14,50 +12,23 @@ export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border/60 shadow-sm">
-      {/* Top bar */}
-      <div className="bg-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9 text-xs">
-          <div className="flex items-center gap-5">
-            <a
-              href={`tel:${PRACTICE.phoneRaw}`}
-              className="flex items-center gap-1.5 hover:text-primary transition-colors"
-            >
-              <Phone className="h-3 w-3" />
-              {PRACTICE.phone}
-            </a>
-            <span className="hidden sm:inline text-white/30">|</span>
-            <span className="hidden sm:inline text-white/60">Farmington Hills, MI</span>
-          </div>
-          <div className="flex items-center gap-4 text-white/60">
-            <span className="hidden md:inline">
-              <span className="text-primary font-medium">Telehealth</span> Available Across Michigan
-            </span>
-            <span className="hidden lg:inline text-white/30">|</span>
-            <span className="hidden lg:inline">
-              New Patients Welcome
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Main nav */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[68px]">
+    <header className="sticky top-0 z-50 bg-[#F8F4EC]/90 backdrop-blur-md border-b border-[#1F1A14]/8">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
-            <Image
-              src="/images/logo.gif"
-              alt="Jajo Psychiatry"
-              width={140}
-              height={77}
-              className="h-14 w-auto"
-              priority
-            />
+          <Link href="/" className="flex items-center gap-2.5 shrink-0">
+            <div className="h-9 w-9 rounded-full bg-[#1F1A14] flex items-center justify-center">
+              <span className="font-editorial text-[#F8F4EC] text-lg leading-none">
+                J
+              </span>
+            </div>
+            <span className="font-editorial text-lg sm:text-xl tracking-tight text-[#1F1A14]">
+              Jajo Psychiatry
+            </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-0.5">
+          <nav className="hidden lg:flex items-center gap-7">
             {NAV_ITEMS.map((item) => (
               <div
                 key={item.label}
@@ -70,7 +41,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 px-3.5 py-2 text-sm font-medium text-navy/70 hover:text-primary transition-colors rounded-md"
+                    "flex items-center gap-1 py-2 text-sm text-[#1F1A14]/60 hover:text-[#1F1A14] transition-colors"
                   )}
                 >
                   {item.label}
@@ -81,19 +52,20 @@ export function Header() {
 
                 {"children" in item && openDropdown === item.label && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
+                    exit={{ opacity: 0, y: 6 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-0 w-64 bg-white rounded-xl shadow-xl shadow-navy/8 border border-border/60 py-2 z-50"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-64 bg-[#F8F4EC] rounded-2xl shadow-2xl shadow-[#1F1A14]/10 border border-[#1F1A14]/8 py-3 z-50"
                   >
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2.5 text-sm text-navy/70 hover:text-primary hover:bg-primary-light/50 transition-colors"
+                        className="flex items-center justify-between px-5 py-2.5 text-sm text-[#1F1A14]/70 hover:text-[#1F1A14] hover:bg-[#EADCC2]/40 transition-colors"
                       >
                         {child.label}
+                        <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     ))}
                   </motion.div>
@@ -103,22 +75,26 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-5">
             <a
               href={`tel:${PRACTICE.phoneRaw}`}
-              className="flex items-center gap-1.5 text-sm font-medium text-navy/70 hover:text-primary transition-colors"
+              className="flex items-center gap-1.5 text-sm text-[#1F1A14]/60 hover:text-[#1F1A14] transition-colors"
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-3.5 w-3.5" />
               {PRACTICE.phone}
             </a>
-            <Button href={PRACTICE.bookingUrl} size="sm" className="bg-primary hover:bg-primary-dark shadow-sm shadow-primary/20">
-              Book Appointment
-            </Button>
+            <Link
+              href={PRACTICE.bookingUrl}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium hover:bg-[#3D2E1F] transition-colors"
+            >
+              Book Visit
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-navy"
+            className="lg:hidden p-2 text-[#1F1A14]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
@@ -135,25 +111,25 @@ export function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden overflow-hidden bg-white border-t border-border/60"
+            className="lg:hidden overflow-hidden bg-[#F8F4EC] border-t border-[#1F1A14]/8"
           >
-            <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+            <nav className="max-w-[1400px] mx-auto px-6 py-5 space-y-1">
               {NAV_ITEMS.map((item) => (
                 <div key={item.label}>
                   <Link
                     href={item.href}
-                    className="block px-3 py-2.5 text-base font-medium text-navy/80 hover:text-primary hover:bg-primary-light/50 rounded-md transition-colors"
+                    className="block px-3 py-2.5 text-base font-editorial text-[#1F1A14] rounded-lg transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     {item.label}
                   </Link>
                   {"children" in item && (
-                    <div className="ml-4 space-y-0.5">
+                    <div className="ml-4 space-y-0.5 mb-2">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                          className="block px-3 py-1.5 text-sm text-[#1F1A14]/60 hover:text-[#1F1A14] transition-colors"
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
@@ -163,18 +139,22 @@ export function Header() {
                   )}
                 </div>
               ))}
-              <div className="pt-4 space-y-3 border-t border-border mt-4">
-                <Button
+              <div className="pt-4 space-y-3 border-t border-[#1F1A14]/10 mt-4">
+                <a
                   href={`tel:${PRACTICE.phoneRaw}`}
-                  variant="outline"
-                  className="w-full"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-[#1F1A14]/20 text-sm text-[#1F1A14]"
                 >
                   <Phone className="h-4 w-4" />
                   Call {PRACTICE.phone}
-                </Button>
-                <Button href={PRACTICE.bookingUrl} className="w-full bg-primary hover:bg-primary-dark">
+                </a>
+                <Link
+                  href={PRACTICE.bookingUrl}
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium"
+                  onClick={() => setMobileOpen(false)}
+                >
                   Book Appointment
-                </Button>
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
             </nav>
           </motion.div>

@@ -1,152 +1,125 @@
 import type { Metadata } from "next";
-import {
-  CalendarCheck,
-  Clock,
-  Video,
-  Shield,
-  Dna,
-  Brain,
-  Heart,
-  Star,
-  ArrowRight,
-  CheckCircle2,
-} from "lucide-react";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Button } from "@/components/ui/Button";
-import { TrustBadges } from "@/components/ui/TrustBadges";
+import Link from "next/link";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { PageHero } from "@/components/layout/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
-import { PRACTICE } from "@/lib/constants";
+import {
+  FlourishOrnament,
+  BotanicalSprig,
+  GlyphWatermark,
+} from "@/components/ui/Ornaments";
 
 export const metadata: Metadata = {
   title: "Why Choose Jajo Psychiatry",
   description:
-    "Fast scheduling, same-day availability, telehealth, insurance-friendly, GeneSight testing, ADHD evaluations, and personalized care. Discover why patients choose Jajo Psychiatry.",
+    "Fast scheduling, telehealth, insurance-friendly, GeneSight testing, ADHD evaluations, and personalized care. Discover why patients choose Jajo Psychiatry.",
 };
 
 const differentiators = [
   {
-    icon: CalendarCheck,
+    num: "01",
     title: "Fast Scheduling",
-    subtitle: "Appointments Within 1 Week",
+    subtitle: "Within 1 week",
     description:
-      "We know that when you need psychiatric care, waiting weeks or months is not acceptable. Most new patients are seen within one week of reaching out, so you can start getting the help you need right away.",
+      "Most new patients are seen within one week of reaching out, so you can start getting help right away.",
   },
   {
-    icon: Clock,
+    num: "02",
     title: "Same-Day Availability",
-    subtitle: "When You Need Us Most",
+    subtitle: "When needed",
     description:
-      "Depending on scheduling, same-day or next-day appointments may be available. Call our office to check current openings and we will do our best to accommodate you as quickly as possible.",
+      "Depending on scheduling, same-day or next-day appointments may be available. Call to check openings.",
   },
   {
-    icon: Video,
-    title: "Telehealth Available",
-    subtitle: "Care From Anywhere in Michigan",
+    num: "03",
+    title: "Telehealth Across MI",
+    subtitle: "From anywhere",
     description:
-      "Access quality psychiatric care from the comfort of your home through secure video visits. Our telepsychiatry services provide the same thorough evaluations and ongoing care as in-person appointments.",
+      "Secure video visits with the same thorough evaluations and ongoing care as in-person appointments.",
   },
   {
-    icon: Shield,
+    num: "04",
     title: "Insurance-Friendly",
-    subtitle: "We Accept Most Major Plans",
+    subtitle: "Most plans",
     description:
-      "We accept Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, Humana, Medicare, Medicaid, Priority Health, HAP, Molina Healthcare, and more. We will help verify your coverage before your visit.",
+      "BCBS, Aetna, Cigna, United, Humana, Medicare, Medicaid, Priority, HAP, Molina, and more accepted.",
   },
   {
-    icon: Dna,
+    num: "05",
     title: "GeneSight Testing",
-    subtitle: "Precision Medication Selection",
+    subtitle: "Precision prescribing",
     description:
-      "Not sure which medication will work best for you? GeneSight pharmacogenomic testing analyzes how your genes affect your response to psychiatric medications, helping your provider choose the most effective treatment from the start.",
+      "Pharmacogenomic testing helps your provider choose the most effective medication from the start.",
   },
   {
-    icon: Brain,
-    title: "ADHD Testing & Evaluations",
-    subtitle: "Comprehensive Assessments",
+    num: "06",
+    title: "ADHD Evaluations",
+    subtitle: "Comprehensive",
     description:
-      "We provide thorough ADHD evaluations using evidence-based clinical screening tools. Our comprehensive assessments help ensure an accurate diagnosis, so you receive the right treatment plan for your needs.",
+      "Thorough evaluations using evidence-based clinical screening tools for an accurate diagnosis.",
   },
   {
-    icon: Heart,
-    title: "Personalized Care",
-    subtitle: "No Cookie-Cutter Approach",
+    num: "07",
+    title: "Personalized Plans",
+    subtitle: "Never templated",
     description:
-      "Every patient is unique, and your treatment should be too. We take the time to understand your specific symptoms, concerns, and goals to create a truly individualized care plan.",
+      "We take the time to understand your symptoms, concerns, and goals to create individualized care.",
   },
   {
-    icon: Star,
-    title: "Board-Certified Providers",
-    subtitle: "Experienced Psychiatric Team",
+    num: "08",
+    title: "Board-Certified",
+    subtitle: "Experienced team",
     description:
-      "Our psychiatrists are board-certified and bring extensive training and experience to every patient interaction. You can trust that you are receiving care from qualified, knowledgeable providers.",
+      "Psychiatrists with extensive training and experience you can trust for qualified, knowledgeable care.",
   },
-];
-
-const comparisonPoints = [
-  "New patients seen within 1 week, not months",
-  "Same-day scheduling sometimes available",
-  "Both telehealth and in-person options",
-  "Most major insurance plans accepted",
-  "GeneSight genetic testing for medication optimization",
-  "Comprehensive ADHD testing and evaluations",
-  "Personalized treatment plans for every patient",
-  "Board-certified, experienced providers",
 ];
 
 export default function WhyJajoPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-secondary py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs
-            items={[
-              { name: "About", href: "/about" },
-              { name: "Why Jajo Psychiatry", href: "/about/why-jajo" },
-            ]}
-          />
-          <div className="max-w-3xl">
-            <h1 className="font-[var(--font-heading)] text-4xl sm:text-5xl font-bold text-foreground mb-4">
-              Why Choose Jajo Psychiatry?
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              We believe psychiatric care should be accessible, personalized, and
-              effective. Here is what sets Jajo Psychiatry apart from other
-              practices.
-            </p>
-            <TrustBadges variant="inline" />
-          </div>
-        </div>
-      </section>
+    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+      <PageHero
+        breadcrumbs={[
+          { name: "About", href: "/about" },
+          { name: "Why Jajo", href: "/about/why-jajo" },
+        ]}
+        eyebrow="What Sets Us Apart"
+        title="Care that shows up,"
+        titleEm="quickly."
+        description="We built our practice around what patients actually need: fast access, flexible options, and truly individualized care."
+        image="/images/ai/nature-calm.jpg"
+      />
 
-      {/* Differentiators Grid */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              What Makes Us Different
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              From fast scheduling to advanced testing options, we go above and
-              beyond to provide exceptional psychiatric care.
+      {/* Differentiators grid */}
+      <section className="relative px-6 lg:px-10 py-20 overflow-hidden">
+        <BotanicalSprig className="absolute -left-20 top-32 w-[420px] h-[420px] text-[#1F1A14] opacity-[0.05] hidden lg:block" />
+        <GlyphWatermark
+          className="-right-16 bottom-12 hidden lg:block"
+          glyph="J"
+          size="26rem"
+          opacity={0.04}
+        />
+        <div className="relative max-w-[1400px] mx-auto">
+          <div className="mb-14">
+            <FlourishOrnament className="mb-5 hidden lg:flex" />
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              — The Difference
             </p>
+            <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05] max-w-2xl">
+              Eight reasons<br />
+              <em className="italic text-[#8B6F4E]">people choose us.</em>
+            </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
             {differentiators.map((item) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-xl border border-border p-6 hover:border-primary/30 hover:shadow-sm transition-all"
-              >
-                <div className="h-12 w-12 rounded-lg bg-primary-light flex items-center justify-center mb-4">
-                  <item.icon className="h-6 w-6 text-primary" />
+              <div key={item.title} className="bg-[#F8F4EC] p-7 lg:p-8">
+                <div className="flex items-start justify-end mb-6">
+                  <span className="text-[10px] tracking-wider uppercase text-[#8B6F4E]">
+                    {item.subtitle}
+                  </span>
                 </div>
-                <h3 className="font-semibold text-foreground mb-0.5">
-                  {item.title}
-                </h3>
-                <p className="text-primary text-sm font-medium mb-3">
-                  {item.subtitle}
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-editorial text-xl mb-2">{item.title}</h3>
+                <p className="text-sm text-[#1F1A14]/60 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -155,105 +128,52 @@ export default function WhyJajoPage() {
         </div>
       </section>
 
-      {/* Comparison Checklist */}
-      <section className="py-16 sm:py-20 bg-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                The Jajo Psychiatry Difference
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Finding the right psychiatrist can feel overwhelming. At Jajo
-                Psychiatry, we have built our practice around what patients
-                actually need: fast access, flexible options, and truly
-                individualized care.
-              </p>
-              <ul className="space-y-3">
-                {comparisonPoints.map((point) => (
-                  <li key={point} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-foreground">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl border border-border p-8 lg:p-10">
-              <div className="text-center">
-                <div className="inline-flex items-center gap-2 bg-accent/10 text-accent text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-                  <Star className="h-4 w-4" />
-                  Patient-Focused Care
-                </div>
-                <h3 className="font-[var(--font-heading)] text-2xl font-bold text-foreground mb-3">
-                  Ready to Experience the Difference?
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  Schedule your appointment today. Most new patients are seen
-                  within one week.
+      {/* Two-column statement */}
+      <section className="px-6 lg:px-10 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="bg-[#1F1A14] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-20">
+            <div className="grid lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-8">
+                <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-5">
+                  — Your Mental Health Matters
                 </p>
-                <div className="space-y-3">
-                  <Button
-                    href={PRACTICE.bookingUrl}
-                    variant="primary"
-                    size="lg"
-                    className="w-full"
-                  >
-                    <CalendarCheck className="h-5 w-5" />
-                    Book Appointment
-                  </Button>
-                  <Button
-                    href={`tel:${PRACTICE.phoneRaw}`}
-                    variant="outline"
-                    size="lg"
-                    className="w-full"
-                  >
-                    Call {PRACTICE.phone}
-                  </Button>
-                </div>
-                <p className="text-xs text-muted-foreground mt-4">
-                  Or{" "}
-                  <a
-                    href="/contact"
-                    className="text-primary hover:underline font-medium"
-                  >
-                    send us a message
-                  </a>{" "}
-                  and we will get back to you within 1 business day.
+                <h2 className="font-editorial text-3xl lg:text-5xl leading-[1.1] mb-6">
+                  Whether you&apos;re seeking help for the first time<br />
+                  <em className="italic text-[#E8C9A0]">
+                    or looking for a new provider.
+                  </em>
+                </h2>
+                <p className="text-white/60 leading-relaxed max-w-xl">
+                  Jajo Psychiatry combines advanced tools like GeneSight testing
+                  and comprehensive ADHD evaluations with genuine compassion and
+                  personalized attention.
                 </p>
+              </div>
+              <div className="lg:col-span-4 flex flex-col gap-3">
+                <Link
+                  href="/new-patients"
+                  className="inline-flex items-center justify-between gap-2 px-6 py-4 rounded-full bg-[#F8F4EC] text-[#1F1A14] text-sm font-semibold hover:bg-white transition-colors"
+                >
+                  New Patient Info
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/about/providers"
+                  className="inline-flex items-center justify-between gap-2 px-6 py-4 rounded-full border border-white/25 text-white text-sm hover:bg-white/5 transition-colors"
+                >
+                  Meet Providers
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial / Trust */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Your Mental Health Matters
-          </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-            Whether you are seeking help for the first time or looking for a new
-            psychiatric provider, Jajo Psychiatry is here for you. We combine
-            advanced tools like GeneSight testing and comprehensive ADHD
-            evaluations with genuine compassion and personalized attention.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="/new-patients" variant="primary" size="lg">
-              New Patient Information
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button href="/about/providers" variant="outline" size="lg">
-              Meet Our Providers
-            </Button>
-          </div>
-        </div>
-      </section>
-
       <CTASection
-        headline="Start Your Journey Today"
+        headline="Start your journey today."
         subheadline="Experience personalized, evidence-based psychiatric care. New patients are often seen within one week."
       />
-    </>
+    </div>
   );
 }

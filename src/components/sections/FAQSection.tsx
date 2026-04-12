@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 import { FAQSchema } from "@/components/seo/SchemaMarkup";
 import { cn } from "@/lib/utils";
 
@@ -27,58 +27,69 @@ export function FAQSection({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className={cn("py-16 sm:py-20", className)}>
+    <section className={cn("px-6 lg:px-10 py-20", className)}>
       <FAQSchema faqs={faqs} />
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold text-foreground mb-3">
-            {title}
-          </h2>
-          {subtitle && (
-            <p className="text-muted-foreground text-lg">{subtitle}</p>
-          )}
-        </div>
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-5">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              — Questions
+            </p>
+            <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05] mb-4">
+              {title.includes("Asked") ? (
+                <>
+                  Frequently<br />
+                  <em className="italic text-[#8B6F4E]">asked.</em>
+                </>
+              ) : (
+                title
+              )}
+            </h2>
+            {subtitle && (
+              <p className="text-[#1F1A14]/60 leading-relaxed max-w-md">
+                {subtitle}
+              </p>
+            )}
+          </div>
 
-        <div className="space-y-3">
-          {faqs.map((faq, i) => {
-            const isOpen = openIndex === i;
-            return (
-              <div
-                key={i}
-                className="border border-border rounded-lg overflow-hidden bg-white"
-              >
-                <button
-                  onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-muted/50 transition-colors cursor-pointer"
-                  aria-expanded={isOpen}
-                >
-                  <span className="font-medium text-foreground pr-4">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={cn(
-                      "h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200",
-                      isOpen && "rotate-180"
+          <div className="lg:col-span-7 space-y-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
+            {faqs.map((faq, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <div key={i} className="bg-[#F8F4EC]">
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : i)}
+                    className="w-full flex items-start justify-between px-6 py-5 text-left gap-4 group"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-editorial text-lg lg:text-xl text-[#1F1A14] flex-1">
+                      {faq.question}
+                    </span>
+                    <Plus
+                      className={cn(
+                        "h-5 w-5 shrink-0 text-[#1F1A14]/60 transition-transform duration-200 mt-1",
+                        isOpen && "rotate-45"
+                      )}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="px-6 pb-6 text-[#1F1A14]/60 leading-relaxed text-sm max-w-2xl">
+                          {faq.answer}
+                        </div>
+                      </motion.div>
                     )}
-                  />
-                </button>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="px-6 pb-4 text-muted-foreground leading-relaxed">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

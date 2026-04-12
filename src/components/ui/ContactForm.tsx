@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Send, ArrowUpRight } from "lucide-react";
 import { CONTACT_REASONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -19,16 +18,27 @@ export function ContactForm({ className, compact = false }: ContactFormProps) {
     setSubmitted(true);
   };
 
+  const inputClass =
+    "w-full rounded-xl border border-[#1F1A14]/15 bg-[#F8F4EC] px-5 py-3.5 text-sm text-[#1F1A14] placeholder:text-[#1F1A14]/30 focus:border-[#1F1A14] focus:ring-1 focus:ring-[#1F1A14] outline-none transition-colors";
+
+  const labelClass =
+    "block text-xs tracking-[0.15em] uppercase text-[#1F1A14]/50 mb-2";
+
   if (submitted) {
     return (
-      <div className={cn("bg-primary-light rounded-xl p-8 text-center", className)}>
-        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-          <Send className="h-6 w-6 text-primary" />
+      <div
+        className={cn(
+          "bg-[#EADCC2] rounded-2xl p-10 text-center",
+          className
+        )}
+      >
+        <div className="h-12 w-12 rounded-full bg-[#1F1A14] flex items-center justify-center mx-auto mb-4">
+          <Send className="h-5 w-5 text-[#E8C9A0]" />
         </div>
-        <h3 className="font-semibold text-lg text-foreground mb-2">
-          Thank You!
+        <h3 className="font-editorial text-2xl text-[#1F1A14] mb-2">
+          Thank you.
         </h3>
-        <p className="text-muted-foreground">
+        <p className="text-[#1F1A14]/60 text-sm">
           We&apos;ve received your message and will get back to you within 1
           business day.
         </p>
@@ -37,16 +47,15 @@ export function ContactForm({ className, compact = false }: ContactFormProps) {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={cn("space-y-4", className)}
-    >
-      <div className={cn("grid gap-4", compact ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2")}>
+    <form onSubmit={handleSubmit} className={cn("space-y-5", className)}>
+      <div
+        className={cn(
+          "grid gap-5",
+          compact ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"
+        )}
+      >
         <div>
-          <label
-            htmlFor="firstName"
-            className="block text-sm font-medium text-foreground mb-1.5"
-          >
+          <label htmlFor="firstName" className={labelClass}>
             First Name
           </label>
           <input
@@ -54,15 +63,12 @@ export function ContactForm({ className, compact = false }: ContactFormProps) {
             id="firstName"
             name="firstName"
             required
-            className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+            className={inputClass}
             placeholder="Your first name"
           />
         </div>
         <div>
-          <label
-            htmlFor="lastName"
-            className="block text-sm font-medium text-foreground mb-1.5"
-          >
+          <label htmlFor="lastName" className={labelClass}>
             Last Name
           </label>
           <input
@@ -70,18 +76,20 @@ export function ContactForm({ className, compact = false }: ContactFormProps) {
             id="lastName"
             name="lastName"
             required
-            className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+            className={inputClass}
             placeholder="Your last name"
           />
         </div>
       </div>
 
-      <div className={cn("grid gap-4", compact ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2")}>
+      <div
+        className={cn(
+          "grid gap-5",
+          compact ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"
+        )}
+      >
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-foreground mb-1.5"
-          >
+          <label htmlFor="email" className={labelClass}>
             Email
           </label>
           <input
@@ -89,39 +97,33 @@ export function ContactForm({ className, compact = false }: ContactFormProps) {
             id="email"
             name="email"
             required
-            className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+            className={inputClass}
             placeholder="your@email.com"
           />
         </div>
         <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-foreground mb-1.5"
-          >
+          <label htmlFor="phone" className={labelClass}>
             Phone
           </label>
           <input
             type="tel"
             id="phone"
             name="phone"
-            className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+            className={inputClass}
             placeholder="(555) 555-5555"
           />
         </div>
       </div>
 
       <div>
-        <label
-          htmlFor="reason"
-          className="block text-sm font-medium text-foreground mb-1.5"
-        >
+        <label htmlFor="reason" className={labelClass}>
           Reason for Inquiry
         </label>
         <select
           id="reason"
           name="reason"
           defaultValue=""
-          className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+          className={inputClass}
         >
           <option value="" disabled>
             Choose one...
@@ -135,25 +137,25 @@ export function ContactForm({ className, compact = false }: ContactFormProps) {
       </div>
 
       <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-foreground mb-1.5"
-        >
+        <label htmlFor="message" className={labelClass}>
           Message
         </label>
         <textarea
           id="message"
           name="message"
-          rows={compact ? 3 : 4}
-          className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
+          rows={compact ? 3 : 5}
+          className={cn(inputClass, "resize-none")}
           placeholder="Tell us how we can help..."
         />
       </div>
 
-      <Button type="submit" className="w-full sm:w-auto">
-        <Send className="h-4 w-4" />
+      <button
+        type="submit"
+        className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium hover:bg-[#3D2E1F] transition-colors"
+      >
         Send Message
-      </Button>
+        <ArrowUpRight className="h-4 w-4" />
+      </button>
     </form>
   );
 }
