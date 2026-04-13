@@ -171,7 +171,7 @@ export default function HomepagePreview() {
       <section className="relative px-6 lg:px-10 py-20 lg:py-28 overflow-hidden">
         <BrainWaves color={navy} opacity={0.04} />
         <NeuronAccent color={navy} opacity={0.05} side="right" />
-        <BotanicalSprig className="absolute -left-16 top-1/2 -translate-y-1/2 w-[520px] h-[520px] opacity-[0.04] hidden lg:block" style={{ color: navy }} />
+        <BotanicalSprig className="absolute -left-16 top-1/2 -translate-y-1/2 w-[520px] h-[520px] text-[#1B1F4B] opacity-[0.04] hidden lg:block" />
         <GlyphWatermark className="left-[6%] -bottom-16 hidden lg:block" glyph="J" size="32rem" opacity={0.03} />
 
         <div className="relative max-w-[1400px] mx-auto">
