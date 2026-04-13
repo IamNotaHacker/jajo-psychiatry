@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -73,6 +74,7 @@ export default function RootLayout({
       className={`${jakarta.variable} ${playfair.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
+        <ScrollToTop />
         <SchemaMarkup />
         <Header />
         <main className="flex-1">{children}</main>

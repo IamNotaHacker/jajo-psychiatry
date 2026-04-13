@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { PRACTICE, NAV_ITEMS } from "@/lib/constants";
@@ -16,15 +17,15 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="h-9 w-9 rounded-full bg-[#1F1A14] flex items-center justify-center">
-              <span className="font-editorial text-[#F8F4EC] text-lg leading-none">
-                J
-              </span>
-            </div>
-            <span className="font-editorial text-lg sm:text-xl tracking-tight text-[#1F1A14]">
-              Jajo Psychiatry
-            </span>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/images/jajo-logo.webp"
+              alt="Jajo Psychiatry"
+              width={240}
+              height={60}
+              className="h-14 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

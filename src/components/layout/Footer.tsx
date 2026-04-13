@@ -1,44 +1,40 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { PRACTICE, SERVICES, CONDITIONS } from "@/lib/constants";
-import {
-  BotanicalSprig,
-  GlyphWatermark,
-  DotGridPattern,
-} from "@/components/ui/Ornaments";
+import { GlyphWatermark } from "@/components/ui/Ornaments";
+import { BrainWaveBackground } from "@/components/ui/BrainWaveBackground";
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#1F1A14] text-[#F8F4EC]/80 overflow-hidden">
-      {/* Subtle decorative background layers */}
-      <DotGridPattern color="#E8C9A0" opacity={0.04} />
-      <BotanicalSprig className="absolute -right-32 top-8 w-[600px] h-[600px] text-[#E8C9A0] opacity-[0.04] hidden lg:block" />
-      <BotanicalSprig className="absolute -left-40 bottom-0 w-[500px] h-[500px] text-[#E8C9A0] opacity-[0.035] hidden lg:block rotate-180" />
+    <footer className="relative bg-[#1B1F4B] text-[#F8F4EC]/80 overflow-hidden">
+      {/* Interactive brain wave background */}
+      <BrainWaveBackground />
+
       <GlyphWatermark
         className="right-[8%] top-[10%] hidden lg:block"
         glyph="J"
-        color="#E8C9A0"
+        color="#2D5DA1"
         size="28rem"
-        opacity={0.03}
+        opacity={0.04}
       />
       {/* Fine top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E8C9A0]/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#4DC9F6]/25 to-transparent" />
 
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-20 pb-10">
         {/* Big editorial lockup */}
-        <div className="grid lg:grid-cols-12 gap-10 pb-16 border-b border-[#F8F4EC]/10">
+        <div className="grid lg:grid-cols-12 gap-10 pb-16">
           <div className="lg:col-span-7">
             <p className="text-xs tracking-[0.3em] uppercase text-[#F8F4EC]/40 mb-5">
               — Jajo Psychiatry
             </p>
             <h2 className="font-editorial text-4xl lg:text-6xl leading-[1.05] text-[#F8F4EC] mb-8">
               Thoughtful care,<br />
-              <em className="italic text-[#E8C9A0]">closer than you think.</em>
+              <em className="italic text-[#4DC9F6]">closer than you think.</em>
             </h2>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={PRACTICE.bookingUrl}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#F8F4EC] text-[#1F1A14] text-sm font-medium hover:bg-white transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#F8F4EC] text-[#1B1F4B] text-sm font-medium hover:bg-white transition-colors"
               >
                 Book a visit
                 <ArrowUpRight className="h-4 w-4" />
@@ -59,7 +55,7 @@ export function Footer() {
               — Visit Us
             </p>
             <div className="flex items-start gap-3 text-sm text-[#F8F4EC]/70">
-              <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-[#E8C9A0]" />
+              <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-[#4DC9F6]" />
               <div>
                 <p>{PRACTICE.address.street}</p>
                 <p>{PRACTICE.address.suite}</p>
@@ -73,7 +69,7 @@ export function Footer() {
               href={`mailto:${PRACTICE.email}`}
               className="flex items-start gap-3 text-sm text-[#F8F4EC]/70 hover:text-[#F8F4EC] transition-colors"
             >
-              <Mail className="h-4 w-4 mt-0.5 shrink-0 text-[#E8C9A0]" />
+              <Mail className="h-4 w-4 mt-0.5 shrink-0 text-[#4DC9F6]" />
               {PRACTICE.email}
             </a>
             <div className="pt-2 text-sm text-[#F8F4EC]/50">
