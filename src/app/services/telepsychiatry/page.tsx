@@ -16,7 +16,7 @@ export default function TelepsychiatryPage() {
       heroTitle="Virtual care,"
       heroTitleEm="real connection."
       heroDescription="Convenient, secure video visits for patients anywhere in Michigan. Same thorough evaluations and ongoing care as in-person."
-      heroImage="/images/ai/nature-calm.jpg"
+      heroImage="/images/ai/nature-new.jpg"
       sidebarLabel="Virtual Visits"
       sidebarStat="Statewide"
       sidebarStatLabel="Available to patients across all of Michigan"

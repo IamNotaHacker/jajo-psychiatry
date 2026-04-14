@@ -16,7 +16,7 @@ export default function PsychiatricEvaluationsPage() {
       heroTitle="Psychiatric"
       heroTitleEm="evaluations."
       heroDescription="A comprehensive psychiatric evaluation is the foundation of effective mental health care. Thorough clinical assessments designed to understand your symptoms, history, and goals."
-      heroImage="/images/ai/office-detail.jpg"
+      heroImage="/images/ai/office-new.jpg"
       sidebarLabel="Your Evaluation"
       sidebarStat="45–60"
       sidebarStatLabel="Minutes — the typical length of your initial evaluation"

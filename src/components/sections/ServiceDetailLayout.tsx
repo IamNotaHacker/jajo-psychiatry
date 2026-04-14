@@ -70,7 +70,7 @@ export function ServiceDetailLayout({
   ctaSubheadline,
 }: ServiceDetailLayoutProps) {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[
           { name: "Services", href: "/services" },
@@ -85,11 +85,11 @@ export function ServiceDetailLayout({
 
       {/* Intro prose */}
       <section className="relative px-6 lg:px-10 py-20 overflow-hidden">
-        <BotanicalSprig className="absolute -left-20 top-8 w-[420px] h-[420px] text-[#1F1A14] opacity-[0.05] hidden lg:block" />
+        <BotanicalSprig className="absolute -left-20 top-8 w-[420px] h-[420px] text-[#1B1F4B] opacity-[0.05] hidden lg:block" />
         <div className="relative max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-5">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-5">
                 — {sidebarLabel || serviceName}
               </p>
               <FlourishOrnament className="hidden lg:flex mb-8" />
@@ -97,12 +97,12 @@ export function ServiceDetailLayout({
               {sidebarStat && (
                 <div className="hidden lg:block mb-8">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-editorial text-5xl text-[#8B6F4E]">
+                    <span className="font-editorial text-5xl text-[#2D5DA1]">
                       {sidebarStat}
                     </span>
                   </div>
                   {sidebarStatLabel && (
-                    <p className="text-xs text-[#1F1A14]/55 mt-2 max-w-[16rem] leading-relaxed">
+                    <p className="text-xs text-[#1B1F4B]/55 mt-2 max-w-[16rem] leading-relaxed">
                       {sidebarStatLabel}
                     </p>
                   )}
@@ -111,16 +111,16 @@ export function ServiceDetailLayout({
 
               {sidebarNote && (
                 <div className="hidden lg:block">
-                  <div className="h-px bg-[#1F1A14]/10 mb-6" />
-                  <p className="font-editorial italic text-[#8B6F4E]/80 text-lg leading-snug max-w-[16rem]">
+                  <div className="h-px bg-[#1B1F4B]/10 mb-6" />
+                  <p className="font-editorial italic text-[#2D5DA1]/80 text-lg leading-snug max-w-[16rem]">
                     {sidebarNote}
                   </p>
                 </div>
               )}
             </div>
-            <div className="lg:col-span-8 space-y-6 text-[#1F1A14]/70 leading-relaxed text-lg">
+            <div className="lg:col-span-8 space-y-6 text-[#1B1F4B]/70 leading-relaxed text-lg">
               {intro.map((para, i) => (
-                <p key={i} className={i === 0 ? "font-editorial text-2xl lg:text-[1.75rem] leading-[1.3] text-[#1F1A14]" : ""}>
+                <p key={i} className={i === 0 ? "font-editorial text-2xl lg:text-[1.75rem] leading-[1.3] text-[#1B1F4B]" : ""}>
                   {para}
                 </p>
               ))}
@@ -140,21 +140,21 @@ export function ServiceDetailLayout({
           />
           <div className="relative max-w-[1400px] mx-auto">
             <div className="mb-14">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
                 — Process
               </p>
               <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
                 {stepsHeading}
               </h2>
             </div>
-            <div className="space-y-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
+            <div className="space-y-px bg-[#1B1F4B]/10 rounded-2xl overflow-hidden">
               {steps.map((step) => (
                 <div
                   key={step.num}
                   className="bg-[#F8F4EC] p-8 lg:p-10 grid lg:grid-cols-12 gap-6"
                 >
                   <div className="lg:col-span-2">
-                    <span className="font-editorial text-3xl text-[#1F1A14]/25">
+                    <span className="font-editorial text-3xl text-[#1B1F4B]/25">
                       {step.num}
                     </span>
                   </div>
@@ -162,7 +162,7 @@ export function ServiceDetailLayout({
                     <h3 className="font-editorial text-2xl">{step.title}</h3>
                   </div>
                   <div className="lg:col-span-6">
-                    <p className="text-[#1F1A14]/60 leading-relaxed">
+                    <p className="text-[#1B1F4B]/60 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -177,13 +177,13 @@ export function ServiceDetailLayout({
       {benefits && benefits.length > 0 && (
         <section className="px-6 lg:px-10 py-20">
           <div className="max-w-[1400px] mx-auto">
-            <div className="bg-[#1F1A14] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-3">
+            <div className="bg-[#1B1F4B] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#4DC9F6] mb-3">
                 — {benefitsHeading}
               </p>
               <h2 className="font-editorial text-3xl lg:text-5xl leading-[1.05] mb-12">
                 What makes<br />
-                <em className="italic text-[#E8C9A0]">the difference.</em>
+                <em className="italic text-[#4DC9F6]">the difference.</em>
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {benefits.map((benefit) => (
@@ -205,10 +205,10 @@ export function ServiceDetailLayout({
       {/* Related conditions */}
       {relatedConditions && relatedConditions.length > 0 && (
         <section className="relative px-6 lg:px-10 py-20 overflow-hidden">
-          <BotanicalSprig className="absolute -right-24 top-4 w-[400px] h-[400px] text-[#1F1A14] opacity-[0.04] hidden lg:block rotate-180" />
+          <BotanicalSprig className="absolute -right-24 top-4 w-[400px] h-[400px] text-[#1B1F4B] opacity-[0.04] hidden lg:block rotate-180" />
           <div className="relative max-w-[1400px] mx-auto">
             <div className="mb-12">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
                 — Related
               </p>
               <h2 className="font-editorial text-3xl lg:text-4xl leading-[1.1]">
@@ -223,7 +223,7 @@ export function ServiceDetailLayout({
                   className="group flex items-center justify-between bg-[#EADCC2]/50 hover:bg-[#EADCC2] rounded-2xl px-6 py-5 transition-colors"
                 >
                   <span className="font-editorial text-xl">{condition.name}</span>
-                  <ArrowUpRight className="h-4 w-4 text-[#8B6F4E] group-hover:rotate-45 transition-transform" />
+                  <ArrowUpRight className="h-4 w-4 text-[#2D5DA1] group-hover:rotate-45 transition-transform" />
                 </Link>
               ))}
             </div>

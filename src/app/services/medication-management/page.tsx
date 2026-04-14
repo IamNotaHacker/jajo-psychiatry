@@ -16,7 +16,7 @@ export default function MedicationManagementPage() {
       heroTitle="Medication"
       heroTitleEm="management."
       heroDescription="Careful prescribing, monitoring, and adjustment. A collaborative, ongoing process to find what works for you — with the fewest side effects."
-      heroImage="/images/ai/window-light.jpg"
+      heroImage="/images/ai/window-new.jpg"
       sidebarLabel="Medication Management"
       sidebarStat="Ongoing"
       sidebarStatLabel="Care that evolves with you — not a one-time prescription"

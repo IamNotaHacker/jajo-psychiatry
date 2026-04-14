@@ -16,7 +16,7 @@ export default function InPersonPage() {
       heroTitle="In-person care,"
       heroTitleEm="at our office."
       heroDescription="Face-to-face psychiatric care in a warm, private setting in Farmington Hills. For patients who prefer the personal connection of sitting with their provider."
-      heroImage="/images/ai/hero-main.jpg"
+      heroImage="/images/ai/hero-new.jpg"
       sidebarLabel="In-Person Care"
       sidebarStat="Suite 105"
       sidebarStatLabel="Our private office on West 13 Mile Road, Farmington Hills"

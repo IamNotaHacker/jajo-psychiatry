@@ -16,7 +16,7 @@ export default function ADHDTestingPage() {
       heroTitle="ADHD testing"
       heroTitleEm="& evaluations."
       heroDescription="Evidence-based ADHD assessments using validated clinical screening tools. An accurate diagnosis is the foundation of effective treatment."
-      heroImage="/images/ai/office-detail.jpg"
+      heroImage="/images/ai/office-new.jpg"
       sidebarLabel="ADHD Evaluations"
       sidebarStat="1–2"
       sidebarStatLabel="Visits — the typical evaluation timeline"
