@@ -76,7 +76,7 @@ const differentiators = [
 
 export default function WhyJajoPage() {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[
           { name: "About", href: "/about" },
@@ -86,12 +86,12 @@ export default function WhyJajoPage() {
         title="Care that shows up,"
         titleEm="quickly."
         description="We built our practice around what patients actually need: fast access, flexible options, and truly individualized care."
-        image="/images/ai/nature-calm.jpg"
+        image="/images/ai/nature-new.jpg"
       />
 
       {/* Differentiators grid */}
       <section className="relative px-6 lg:px-10 py-20 overflow-hidden">
-        <BotanicalSprig className="absolute -left-20 top-32 w-[420px] h-[420px] text-[#1F1A14] opacity-[0.05] hidden lg:block" />
+        <BotanicalSprig className="absolute -left-20 top-32 w-[420px] h-[420px] text-[#1B1F4B] opacity-[0.05] hidden lg:block" />
         <GlyphWatermark
           className="-right-16 bottom-12 hidden lg:block"
           glyph="J"
@@ -101,25 +101,25 @@ export default function WhyJajoPage() {
         <div className="relative max-w-[1400px] mx-auto">
           <div className="mb-14">
             <FlourishOrnament className="mb-5 hidden lg:flex" />
-            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
               — The Difference
             </p>
             <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05] max-w-2xl">
               Eight reasons<br />
-              <em className="italic text-[#8B6F4E]">people choose us.</em>
+              <em className="italic text-[#2D5DA1]">people choose us.</em>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1B1F4B]/10 rounded-2xl overflow-hidden">
             {differentiators.map((item) => (
               <div key={item.title} className="bg-[#F8F4EC] p-7 lg:p-8">
                 <div className="flex items-start justify-end mb-6">
-                  <span className="text-[10px] tracking-wider uppercase text-[#8B6F4E]">
+                  <span className="text-[10px] tracking-wider uppercase text-[#2D5DA1]">
                     {item.subtitle}
                   </span>
                 </div>
                 <h3 className="font-editorial text-xl mb-2">{item.title}</h3>
-                <p className="text-sm text-[#1F1A14]/60 leading-relaxed">
+                <p className="text-sm text-[#1B1F4B]/60 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -131,15 +131,15 @@ export default function WhyJajoPage() {
       {/* Two-column statement */}
       <section className="px-6 lg:px-10 py-20">
         <div className="max-w-[1400px] mx-auto">
-          <div className="bg-[#1F1A14] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-20">
+          <div className="bg-[#1B1F4B] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-20">
             <div className="grid lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-8">
-                <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-5">
+                <p className="text-xs tracking-[0.3em] uppercase text-[#4DC9F6] mb-5">
                   — Your Mental Health Matters
                 </p>
                 <h2 className="font-editorial text-3xl lg:text-5xl leading-[1.1] mb-6">
                   Whether you&apos;re seeking help for the first time<br />
-                  <em className="italic text-[#E8C9A0]">
+                  <em className="italic text-[#4DC9F6]">
                     or looking for a new provider.
                   </em>
                 </h2>
@@ -152,7 +152,7 @@ export default function WhyJajoPage() {
               <div className="lg:col-span-4 flex flex-col gap-3">
                 <Link
                   href="/new-patients"
-                  className="inline-flex items-center justify-between gap-2 px-6 py-4 rounded-full bg-[#F8F4EC] text-[#1F1A14] text-sm font-semibold hover:bg-white transition-colors"
+                  className="inline-flex items-center justify-between gap-2 px-6 py-4 rounded-full bg-[#F8F4EC] text-[#1B1F4B] text-sm font-semibold hover:bg-white transition-colors"
                 >
                   New Patient Info
                   <ArrowRight className="h-4 w-4" />

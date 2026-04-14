@@ -243,7 +243,7 @@ function ProviderCard({ provider, index }: { provider: Provider; index: number }
   return (
     <div className="grid lg:grid-cols-12 gap-10 items-start">
       <div className={`lg:col-span-4 ${reverse ? "lg:order-2" : ""}`}>
-        <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#EADCC2] shadow-xl shadow-[#1F1A14]/10">
+        <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#EADCC2] shadow-xl shadow-[#1B1F4B]/10">
           {provider.image ? (
             <Image
               src={provider.image}
@@ -255,12 +255,12 @@ function ProviderCard({ provider, index }: { provider: Provider; index: number }
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="h-32 w-32 rounded-full bg-[#1F1A14] flex items-center justify-center mx-auto mb-4">
-                  <span className="font-editorial text-5xl text-[#E8C9A0]">
+                <div className="h-32 w-32 rounded-full bg-[#1B1F4B] flex items-center justify-center mx-auto mb-4">
+                  <span className="font-editorial text-5xl text-[#4DC9F6]">
                     {provider.initials}
                   </span>
                 </div>
-                <p className="text-xs tracking-wider uppercase text-[#8B6F4E]">
+                <p className="text-xs tracking-wider uppercase text-[#2D5DA1]">
                   Portrait coming soon
                 </p>
               </div>
@@ -270,41 +270,41 @@ function ProviderCard({ provider, index }: { provider: Provider; index: number }
       </div>
 
       <div className={`lg:col-span-8 ${reverse ? "lg:order-1" : ""}`}>
-        <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+        <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
           — Provider
         </p>
         <h3 className="font-editorial text-3xl lg:text-4xl leading-[1.1] mb-1">
           {provider.name}
           {provider.credentials && (
-            <span className="text-[#8B6F4E]">, {provider.credentials}</span>
+            <span className="text-[#2D5DA1]">, {provider.credentials}</span>
           )}
         </h3>
-        <p className="text-[#8B6F4E] text-sm tracking-wider uppercase mb-8">
+        <p className="text-[#2D5DA1] text-sm tracking-wider uppercase mb-8">
           {provider.title}
         </p>
 
-        <div className="space-y-4 text-[#1F1A14]/70 leading-relaxed mb-10 max-w-2xl">
+        <div className="space-y-4 text-[#1B1F4B]/70 leading-relaxed mb-10 max-w-2xl">
           {provider.bio.map((para, i) => (
             <p
               key={i}
               dangerouslySetInnerHTML={{ __html: para }}
-              className={i === 0 ? "text-lg text-[#1F1A14]" : ""}
+              className={i === 0 ? "text-lg text-[#1B1F4B]" : ""}
             />
           ))}
         </div>
 
         <div className="grid sm:grid-cols-2 gap-8 max-w-2xl">
           <div>
-            <p className="text-xs tracking-[0.25em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.25em] uppercase text-[#1B1F4B]/50 mb-3">
               Education
             </p>
             <ul className="space-y-3">
               {provider.education.map((e) => (
-                <li key={e.school} className="text-sm text-[#1F1A14]/70 leading-relaxed">
-                  <span className="block text-[#1F1A14] font-medium">
+                <li key={e.school} className="text-sm text-[#1B1F4B]/70 leading-relaxed">
+                  <span className="block text-[#1B1F4B] font-medium">
                     {e.school}
                   </span>
-                  <span className="text-[#1F1A14]/55">{e.degree}</span>
+                  <span className="text-[#1B1F4B]/55">{e.degree}</span>
                 </li>
               ))}
             </ul>
@@ -313,16 +313,16 @@ function ProviderCard({ provider, index }: { provider: Provider; index: number }
             <div>
               {provider.certifications && (
                 <>
-                  <p className="text-xs tracking-[0.25em] uppercase text-[#1F1A14]/50 mb-3">
+                  <p className="text-xs tracking-[0.25em] uppercase text-[#1B1F4B]/50 mb-3">
                     Certifications
                   </p>
                   <ul className="space-y-2 mb-6">
                     {provider.certifications.map((c) => (
                       <li
                         key={c}
-                        className="text-sm text-[#1F1A14]/70 flex items-start gap-2"
+                        className="text-sm text-[#1B1F4B]/70 flex items-start gap-2"
                       >
-                        <span className="text-[#8B6F4E]">—</span>
+                        <span className="text-[#2D5DA1]">—</span>
                         {c}
                       </li>
                     ))}
@@ -331,16 +331,16 @@ function ProviderCard({ provider, index }: { provider: Provider; index: number }
               )}
               {provider.affiliations && (
                 <>
-                  <p className="text-xs tracking-[0.25em] uppercase text-[#1F1A14]/50 mb-3">
+                  <p className="text-xs tracking-[0.25em] uppercase text-[#1B1F4B]/50 mb-3">
                     Affiliations
                   </p>
                   <ul className="space-y-2">
                     {provider.affiliations.map((a) => (
                       <li
                         key={a}
-                        className="text-sm text-[#1F1A14]/70 flex items-start gap-2"
+                        className="text-sm text-[#1B1F4B]/70 flex items-start gap-2"
                       >
-                        <span className="text-[#8B6F4E]">—</span>
+                        <span className="text-[#2D5DA1]">—</span>
                         {a}
                       </li>
                     ))}
@@ -355,7 +355,7 @@ function ProviderCard({ provider, index }: { provider: Provider; index: number }
           <div className="mt-10">
             <Link
               href={PRACTICE.bookingUrl}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium hover:bg-[#3D2E1F] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#1B1F4B] text-[#F8F4EC] text-sm font-medium hover:bg-[#2D5DA1] transition-colors"
             >
               <Calendar className="h-4 w-4" />
               Book with {provider.name.split(" ")[0]}
@@ -370,7 +370,7 @@ function ProviderCard({ provider, index }: { provider: Provider; index: number }
 
 export default function ProvidersPage() {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[
           { name: "About", href: "/about" },
@@ -380,7 +380,7 @@ export default function ProvidersPage() {
         title="Well established,"
         titleEm="here for you."
         description="Meet the experienced team of physician assistants, therapists, and physicians who carry on Dr. Raad Jajo's tradition of personalized, compassionate care."
-        image="/images/ai/window-light.jpg"
+        image="/images/ai/window-new.jpg"
       />
 
       {/* Founder callout */}
@@ -388,22 +388,22 @@ export default function ProvidersPage() {
         <div className="max-w-[1400px] mx-auto">
           <Link
             href="/about/founder"
-            className="group block bg-[#1F1A14] text-[#F8F4EC] rounded-[2rem] p-8 lg:p-10 hover:bg-[#3D2E1F] transition-colors"
+            className="group block bg-[#1B1F4B] text-[#F8F4EC] rounded-[2rem] p-8 lg:p-10 hover:bg-[#2D5DA1] transition-colors"
           >
             <div className="grid lg:grid-cols-12 gap-6 items-center">
               <div className="lg:col-span-9">
-                <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-3">
+                <p className="text-xs tracking-[0.3em] uppercase text-[#4DC9F6] mb-3">
                   — In Memory of Our Founder
                 </p>
                 <h2 className="font-editorial text-2xl lg:text-3xl leading-[1.15]">
                   Read about Dr. Raad Jajo, M.D. &mdash;{" "}
-                  <em className="italic text-[#E8C9A0]">
+                  <em className="italic text-[#4DC9F6]">
                     the renowned psychiatrist who built this practice.
                   </em>
                 </h2>
               </div>
               <div className="lg:col-span-3 flex lg:justify-end">
-                <span className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#E8C9A0] text-[#1F1A14] text-sm font-semibold group-hover:bg-white transition-colors">
+                <span className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#4DC9F6] text-[#1B1F4B] text-sm font-semibold group-hover:bg-white transition-colors">
                   Visit founder page
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
@@ -415,16 +415,16 @@ export default function ProvidersPage() {
 
       {/* Active team */}
       <section className="relative px-6 lg:px-10 py-16 overflow-hidden">
-        <BotanicalSprig className="absolute -right-20 top-20 w-[440px] h-[440px] text-[#1F1A14] opacity-[0.04] hidden lg:block" />
+        <BotanicalSprig className="absolute -right-20 top-20 w-[440px] h-[440px] text-[#1B1F4B] opacity-[0.04] hidden lg:block" />
         <div className="relative max-w-[1400px] mx-auto">
           <div className="mb-14">
             <FlourishOrnament className="mb-5 hidden lg:flex" />
-            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
               — Active Providers
             </p>
             <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
               Currently<br />
-              <em className="italic text-[#8B6F4E]">accepting patients.</em>
+              <em className="italic text-[#2D5DA1]">accepting patients.</em>
             </h2>
           </div>
 
@@ -438,15 +438,15 @@ export default function ProvidersPage() {
 
       {/* Inactive / collaborating */}
       <section className="relative px-6 lg:px-10 py-20 overflow-hidden">
-        <DotGridPattern color="#8B6F4E" opacity={0.18} dotSize={1.3} spacing={28} />
+        <DotGridPattern color="#2D5DA1" opacity={0.18} dotSize={1.3} spacing={28} />
         <div className="relative max-w-[1400px] mx-auto">
           <div className="mb-14">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
               — Collaborating Physicians
             </p>
             <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
               Not currently<br />
-              <em className="italic text-[#8B6F4E]">seeing patients.</em>
+              <em className="italic text-[#2D5DA1]">seeing patients.</em>
             </h2>
           </div>
 

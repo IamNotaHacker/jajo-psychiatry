@@ -46,50 +46,50 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[{ name: "About", href: "/about" }]}
         eyebrow="Our Practice"
         title="Psychiatric care, offered with"
         titleEm="patience."
         description="Personalized, evidence-based psychiatric care for adults throughout Michigan. Clinical expertise, genuine compassion."
-        image="/images/ai/window-light.jpg"
+        image="/images/ai/window-new.jpg"
       />
 
       {/* Mission */}
       <section className="relative px-6 lg:px-10 py-20 lg:py-28 overflow-hidden">
-        <BotanicalSprig className="absolute -left-20 top-12 w-[440px] h-[440px] text-[#1F1A14] opacity-[0.05] hidden lg:block" />
+        <BotanicalSprig className="absolute -left-20 top-12 w-[440px] h-[440px] text-[#1B1F4B] opacity-[0.05] hidden lg:block" />
         <div className="relative max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-5">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-5">
                 — Our Mission
               </p>
               <FlourishOrnament className="hidden lg:flex mb-8" />
-              <p className="hidden lg:block font-editorial italic text-[#8B6F4E]/80 text-2xl leading-snug max-w-[18rem] mb-6">
+              <p className="hidden lg:block font-editorial italic text-[#2D5DA1]/80 text-2xl leading-snug max-w-[18rem] mb-6">
                 &ldquo;We listen to your story.&rdquo;
               </p>
-              <p className="hidden lg:block text-[10px] tracking-[0.2em] uppercase text-[#1F1A14]/40 mb-10">
+              <p className="hidden lg:block text-[10px] tracking-[0.2em] uppercase text-[#1B1F4B]/40 mb-10">
                 — The Jajo Psychiatry team
               </p>
               <div className="hidden lg:block space-y-5 max-w-[16rem]">
                 <div>
-                  <p className="font-editorial text-3xl text-[#1F1A14]">20+</p>
-                  <p className="text-xs text-[#1F1A14]/55 mt-1">
+                  <p className="font-editorial text-3xl text-[#1B1F4B]">20+</p>
+                  <p className="text-xs text-[#1B1F4B]/55 mt-1">
                     Years caring for Michigan
                   </p>
                 </div>
-                <div className="h-px bg-[#1F1A14]/10" />
+                <div className="h-px bg-[#1B1F4B]/10" />
                 <div>
-                  <p className="font-editorial text-3xl text-[#1F1A14]">8</p>
-                  <p className="text-xs text-[#1F1A14]/55 mt-1">
+                  <p className="font-editorial text-3xl text-[#1B1F4B]">8</p>
+                  <p className="text-xs text-[#1B1F4B]/55 mt-1">
                     Providers on our team
                   </p>
                 </div>
-                <div className="h-px bg-[#1F1A14]/10" />
+                <div className="h-px bg-[#1B1F4B]/10" />
                 <div>
-                  <p className="font-editorial text-3xl text-[#1F1A14]">1 wk</p>
-                  <p className="text-xs text-[#1F1A14]/55 mt-1">
+                  <p className="font-editorial text-3xl text-[#1B1F4B]">1 wk</p>
+                  <p className="text-xs text-[#1B1F4B]/55 mt-1">
                     Average new-patient wait
                   </p>
                 </div>
@@ -98,19 +98,19 @@ export default function AboutPage() {
             <div className="lg:col-span-8">
               <p className="font-editorial text-3xl lg:text-[2.5rem] leading-[1.2] mb-6">
                 Founded by Dr. Raad Jajo, bringing{" "}
-                <em className="italic text-[#8B6F4E]">
+                <em className="italic text-[#2D5DA1]">
                   20+ years of psychiatric experience
                 </em>{" "}
                 to every patient.
               </p>
-              <p className="text-[#1F1A14]/60 leading-relaxed mb-6 max-w-2xl">
+              <p className="text-[#1B1F4B]/60 leading-relaxed mb-6 max-w-2xl">
                 At Jajo Psychiatry, we are committed to helping you achieve
                 optimal wellness, balanced mental health, and an improved state
                 of mind. We understand that every individual is unique &mdash;
                 we listen to your story and develop comprehensive short and
                 long-term plans with your goals in mind.
               </p>
-              <p className="text-[#1F1A14]/60 leading-relaxed mb-8 max-w-2xl">
+              <p className="text-[#1B1F4B]/60 leading-relaxed mb-8 max-w-2xl">
                 We stay updated on the latest studies and pharmaceutical
                 advancements, and we value the benefits of holistic approaches,
                 behavioral therapy, diet, exercise, and sleep quality alongside
@@ -118,7 +118,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/about/providers"
-                className="inline-flex items-center gap-2 text-[#1F1A14] font-semibold border-b border-[#1F1A14] pb-0.5"
+                className="inline-flex items-center gap-2 text-[#1B1F4B] font-semibold border-b border-[#1B1F4B] pb-0.5"
               >
                 Meet our providers
                 <ArrowRight className="h-4 w-4" />
@@ -138,29 +138,29 @@ export default function AboutPage() {
         />
         <div className="relative max-w-[1400px] mx-auto">
           <div className="mb-14">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
               — What Guides Our Care
             </p>
             <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05] max-w-2xl">
               Four principles behind<br />
-              <em className="italic text-[#8B6F4E]">every visit.</em>
+              <em className="italic text-[#2D5DA1]">every visit.</em>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1B1F4B]/10 rounded-2xl overflow-hidden">
             {values.map((value) => (
               <div
                 key={value.num}
                 className="bg-[#F8F4EC] p-8 lg:p-10 flex items-start gap-6"
               >
-                <span className="font-editorial text-3xl text-[#1F1A14]/25 shrink-0">
+                <span className="font-editorial text-3xl text-[#1B1F4B]/25 shrink-0">
                   {value.num}
                 </span>
                 <div>
                   <h3 className="font-editorial text-2xl mb-2">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-[#1F1A14]/60 leading-relaxed">
+                  <p className="text-sm text-[#1B1F4B]/60 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -176,12 +176,12 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-12 gap-6 items-stretch">
             <div className="lg:col-span-5 relative rounded-2xl overflow-hidden aspect-square lg:aspect-auto">
               <Image
-                src="/images/ai/office-detail.jpg"
+                src="/images/ai/office-new.jpg"
                 alt="Our Farmington Hills office"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1F1A14]/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1B1F4B]/50 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <p className="text-xs tracking-wider uppercase text-white/70 mb-1">
                   Visit Us
@@ -193,13 +193,13 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="lg:col-span-7 bg-[#1F1A14] text-[#F8F4EC] rounded-2xl p-8 lg:p-14">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-4">
+            <div className="lg:col-span-7 bg-[#1B1F4B] text-[#F8F4EC] rounded-2xl p-8 lg:p-14">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#4DC9F6] mb-4">
                 — Care on Your Terms
               </p>
               <h2 className="font-editorial text-3xl lg:text-4xl leading-[1.1] mb-6">
                 In-person or virtual.<br />
-                <em className="italic text-[#E8C9A0]">Always personal.</em>
+                <em className="italic text-[#4DC9F6]">Always personal.</em>
               </h2>
               <p className="text-white/60 leading-relaxed mb-8">
                 Choose the appointment format that works best for your schedule
@@ -251,13 +251,13 @@ export default function AboutPage() {
                 className="group bg-[#EADCC2]/50 hover:bg-[#EADCC2] rounded-2xl p-8 transition-colors"
               >
                 <div className="flex items-start justify-between mb-10">
-                  <span className="text-xs tracking-wider uppercase text-[#8B6F4E]">
+                  <span className="text-xs tracking-wider uppercase text-[#2D5DA1]">
                     {link.eyebrow}
                   </span>
-                  <ArrowUpRight className="h-5 w-5 text-[#8B6F4E] group-hover:rotate-45 transition-transform" />
+                  <ArrowUpRight className="h-5 w-5 text-[#2D5DA1] group-hover:rotate-45 transition-transform" />
                 </div>
                 <h3 className="font-editorial text-2xl mb-2">{link.title}</h3>
-                <p className="text-sm text-[#1F1A14]/60">{link.desc}</p>
+                <p className="text-sm text-[#1B1F4B]/60">{link.desc}</p>
               </Link>
             ))}
           </div>

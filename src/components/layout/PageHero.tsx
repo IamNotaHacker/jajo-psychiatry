@@ -26,21 +26,21 @@ export function PageHero({
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-end">
           <div className="lg:col-span-7 order-2 lg:order-1">
             {eyebrow && (
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-4 sm:mb-5">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-4 sm:mb-5">
                 — {eyebrow}
               </p>
             )}
-            <h1 className="font-editorial text-[2.25rem] sm:text-[3rem] lg:text-[5rem] leading-[0.98] text-[#1F1A14] mb-4 sm:mb-6">
+            <h1 className="font-editorial text-[2.25rem] sm:text-[3rem] lg:text-[5rem] leading-[0.98] text-[#1B1F4B] mb-4 sm:mb-6">
               {title}
               {titleEm && (
                 <>
                   <br />
-                  <em className="italic text-[#8B6F4E]">{titleEm}</em>
+                  <em className="italic text-[#2D5DA1]">{titleEm}</em>
                 </>
               )}
             </h1>
             {description && (
-              <p className="text-base sm:text-lg text-[#1F1A14]/60 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-[#1B1F4B]/60 leading-relaxed max-w-xl">
                 {description}
               </p>
             )}
@@ -56,7 +56,7 @@ export function PageHero({
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1F1A14]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1B1F4B]/30 to-transparent" />
             </div>
           </div>
         </div>
