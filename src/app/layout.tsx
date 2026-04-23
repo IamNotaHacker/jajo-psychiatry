@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { BookingProvider } from "@/components/ui/BookingProvider";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -74,12 +75,14 @@ export default function RootLayout({
       className={`${jakarta.variable} ${playfair.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
-        <ScrollToTop />
-        <SchemaMarkup />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <MobileStickyCTA />
+        <BookingProvider>
+          <ScrollToTop />
+          <SchemaMarkup />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <MobileStickyCTA />
+        </BookingProvider>
       </body>
     </html>
   );

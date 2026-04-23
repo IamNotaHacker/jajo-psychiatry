@@ -55,7 +55,7 @@ export function ConditionDetailLayout({
   relatedServices,
 }: ConditionDetailLayoutProps) {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[
           { name: "Conditions", href: "/conditions" },
@@ -70,11 +70,11 @@ export function ConditionDetailLayout({
 
       {/* Intro */}
       <section className="relative px-6 lg:px-10 py-20 overflow-hidden">
-        <BotanicalSprig className="absolute -left-20 top-10 w-[420px] h-[420px] text-[#1F1A14] opacity-[0.05] hidden lg:block" />
+        <BotanicalSprig className="absolute -left-20 top-10 w-[420px] h-[420px] text-[#1B1F4B] opacity-[0.05] hidden lg:block" />
         <div className="relative max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-5">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-5">
                 — {conditionName}
               </p>
               <FlourishOrnament className="hidden lg:flex mb-8" />
@@ -82,12 +82,12 @@ export function ConditionDetailLayout({
               {sidebarStat && (
                 <div className="hidden lg:block mb-8">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-editorial text-5xl text-[#8B6F4E]">
+                    <span className="font-editorial text-5xl text-[#2D5DA1]">
                       {sidebarStat}
                     </span>
                   </div>
                   {sidebarStatLabel && (
-                    <p className="text-xs text-[#1F1A14]/55 mt-2 max-w-[16rem] leading-relaxed">
+                    <p className="text-xs text-[#1B1F4B]/55 mt-2 max-w-[16rem] leading-relaxed">
                       {sidebarStatLabel}
                     </p>
                   )}
@@ -96,20 +96,20 @@ export function ConditionDetailLayout({
 
               {sidebarNote && (
                 <div className="hidden lg:block">
-                  <div className="h-px bg-[#1F1A14]/10 mb-6" />
-                  <p className="font-editorial italic text-[#8B6F4E]/80 text-lg leading-snug max-w-[16rem]">
+                  <div className="h-px bg-[#1B1F4B]/10 mb-6" />
+                  <p className="font-editorial italic text-[#2D5DA1]/80 text-lg leading-snug max-w-[16rem]">
                     {sidebarNote}
                   </p>
                 </div>
               )}
             </div>
-            <div className="lg:col-span-8 space-y-6 text-[#1F1A14]/70 leading-relaxed text-lg">
+            <div className="lg:col-span-8 space-y-6 text-[#1B1F4B]/70 leading-relaxed text-lg">
               {intro.map((para, i) => (
                 <p
                   key={i}
                   className={
                     i === 0
-                      ? "font-editorial text-2xl lg:text-[1.75rem] leading-[1.3] text-[#1F1A14]"
+                      ? "font-editorial text-2xl lg:text-[1.75rem] leading-[1.3] text-[#1B1F4B]"
                       : ""
                   }
                 >
@@ -131,22 +131,22 @@ export function ConditionDetailLayout({
         />
         <div className="relative max-w-[1400px] mx-auto">
           <div className="mb-14">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
               — Signs &amp; Symptoms
             </p>
             <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05] max-w-2xl">
               What it can<br />
-              <em className="italic text-[#8B6F4E]">look like.</em>
+              <em className="italic text-[#2D5DA1]">look like.</em>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1B1F4B]/10 rounded-2xl overflow-hidden">
             {symptoms.map((symptom) => (
               <div
                 key={symptom}
                 className="bg-[#F8F4EC] p-6 lg:p-7 flex items-center gap-4"
               >
-                <span className="text-[#8B6F4E] shrink-0">—</span>
-                <span className="text-[#1F1A14]/80 text-base leading-relaxed">
+                <span className="text-[#2D5DA1] shrink-0">—</span>
+                <span className="text-[#1B1F4B]/80 text-base leading-relaxed">
                   {symptom}
                 </span>
               </div>
@@ -158,15 +158,15 @@ export function ConditionDetailLayout({
       {/* Treatment */}
       <section className="px-6 lg:px-10 py-20">
         <div className="max-w-[1400px] mx-auto">
-          <div className="bg-[#1F1A14] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16">
+          <div className="bg-[#1B1F4B] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16">
             <div className="grid lg:grid-cols-12 gap-10 items-start">
               <div className="lg:col-span-4">
-                <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-4">
+                <p className="text-xs tracking-[0.3em] uppercase text-[#4DC9F6] mb-4">
                   — Our Approach
                 </p>
                 <h2 className="font-editorial text-3xl lg:text-4xl leading-[1.05]">
                   How we<br />
-                  <em className="italic text-[#E8C9A0]">treat it.</em>
+                  <em className="italic text-[#4DC9F6]">treat it.</em>
                 </h2>
               </div>
               <div className="lg:col-span-8 space-y-5 text-white/70 leading-relaxed">
@@ -179,7 +179,7 @@ export function ConditionDetailLayout({
                       <Link
                         key={svc.href}
                         href={svc.href}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-[#E8C9A0] text-sm hover:bg-white/5 transition-colors"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-[#4DC9F6] text-sm hover:bg-white/5 transition-colors"
                       >
                         {svc.name}
                         <ArrowUpRight className="h-3 w-3" />
@@ -195,19 +195,19 @@ export function ConditionDetailLayout({
 
       {/* When to seek help */}
       <section className="relative px-6 lg:px-10 py-20 overflow-hidden">
-        <BotanicalSprig className="absolute -right-24 bottom-0 w-[380px] h-[380px] text-[#1F1A14] opacity-[0.04] hidden lg:block rotate-180" />
+        <BotanicalSprig className="absolute -right-24 bottom-0 w-[380px] h-[380px] text-[#1B1F4B] opacity-[0.04] hidden lg:block rotate-180" />
         <div className="relative max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
                 — When to Seek Help
               </p>
               <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
                 You don&apos;t have<br />
-                <em className="italic text-[#8B6F4E]">to wait.</em>
+                <em className="italic text-[#2D5DA1]">to wait.</em>
               </h2>
             </div>
-            <div className="lg:col-span-7 space-y-5 text-[#1F1A14]/70 leading-relaxed text-lg">
+            <div className="lg:col-span-7 space-y-5 text-[#1B1F4B]/70 leading-relaxed text-lg">
               {whenToSeekHelp.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}

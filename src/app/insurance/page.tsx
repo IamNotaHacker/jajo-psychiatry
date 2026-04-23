@@ -73,7 +73,7 @@ const insuranceFAQs = [
 
 export default function InsurancePage() {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[{ name: "Insurance", href: "/insurance" }]}
         eyebrow="Insurance-Friendly"
@@ -87,12 +87,12 @@ export default function InsurancePage() {
       <section className="px-6 lg:px-10 py-20">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-12">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
               — Accepted Plans
             </p>
             <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
               Most major<br />
-              <em className="italic text-[#8B6F4E]">insurance accepted.</em>
+              <em className="italic text-[#2D5DA1]">insurance accepted.</em>
             </h2>
           </div>
 
@@ -100,25 +100,25 @@ export default function InsurancePage() {
             {INSURANCE_PROVIDERS.map((provider) => (
               <div
                 key={provider}
-                className="bg-[#EADCC2]/50 rounded-2xl p-5 text-center"
+                className="bg-[#E3F0FA] rounded-2xl p-5 text-center"
               >
-                <p className="text-sm font-medium text-[#1F1A14]">
+                <p className="text-sm font-medium text-[#1B1F4B]">
                   {provider}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 bg-[#F8F4EC] border border-[#1F1A14]/10 rounded-2xl p-6">
-            <p className="text-[#1F1A14]/70 text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 bg-[#F8F4EC] border border-[#1B1F4B]/10 rounded-2xl p-6">
+            <p className="text-[#1B1F4B]/70 text-sm">
               Don&apos;t see your plan?{" "}
-              <span className="text-[#1F1A14] font-medium">
+              <span className="text-[#1B1F4B] font-medium">
                 Call us to check your coverage.
               </span>
             </p>
             <a
               href={`tel:${PRACTICE.phoneRaw}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium hover:bg-[#3D2E1F] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1B1F4B] text-[#F8F4EC] text-sm font-medium hover:bg-[#0E1238] transition-colors"
             >
               <Phone className="h-4 w-4" />
               {PRACTICE.phone}
@@ -131,12 +131,12 @@ export default function InsurancePage() {
       <section className="px-6 lg:px-10 py-20">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-12">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
               — Simple Process
             </p>
             <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
               How to verify<br />
-              <em className="italic text-[#8B6F4E]">your coverage.</em>
+              <em className="italic text-[#2D5DA1]">your coverage.</em>
             </h2>
           </div>
 
@@ -144,13 +144,13 @@ export default function InsurancePage() {
             {verifySteps.map((step) => (
               <div
                 key={step.num}
-                className="bg-[#EADCC2]/50 rounded-2xl p-8"
+                className="bg-[#E3F0FA] rounded-2xl p-8"
               >
-                <span className="font-editorial text-3xl text-[#1F1A14]/30 block mb-6">
+                <span className="font-editorial text-3xl text-[#1B1F4B]/30 block mb-6">
                   {step.num}
                 </span>
                 <h3 className="font-editorial text-2xl mb-2">{step.title}</h3>
-                <p className="text-sm text-[#1F1A14]/60 leading-relaxed">
+                <p className="text-sm text-[#1B1F4B]/60 leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -162,15 +162,15 @@ export default function InsurancePage() {
       {/* Self-pay block */}
       <section className="px-6 lg:px-10 py-20">
         <div className="max-w-[1400px] mx-auto">
-          <div className="bg-[#1F1A14] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16">
+          <div className="bg-[#1B1F4B] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16">
             <div className="grid lg:grid-cols-12 gap-10">
               <div className="lg:col-span-7">
-                <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-4">
+                <p className="text-xs tracking-[0.3em] uppercase text-[#4DC9F6] mb-4">
                   — Self-Pay
                 </p>
                 <h2 className="font-editorial text-3xl lg:text-5xl leading-[1.05] mb-6">
                   No insurance?<br />
-                  <em className="italic text-[#E8C9A0]">No problem.</em>
+                  <em className="italic text-[#4DC9F6]">No problem.</em>
                 </h2>
                 <p className="text-white/60 leading-relaxed mb-8 max-w-xl">
                   We believe everyone deserves access to quality psychiatric
@@ -179,7 +179,7 @@ export default function InsurancePage() {
                 </p>
                 <a
                   href={`tel:${PRACTICE.phoneRaw}`}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#E8C9A0] text-[#1F1A14] text-sm font-semibold hover:bg-white transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#4DC9F6] text-[#1B1F4B] text-sm font-semibold hover:bg-white transition-colors"
                 >
                   <Phone className="h-4 w-4" />
                   Call for Self-Pay Rates
@@ -196,7 +196,7 @@ export default function InsurancePage() {
                     key={item}
                     className="flex items-start gap-3 py-3 border-b border-white/10"
                   >
-                    <span className="text-[#E8C9A0] text-sm">—</span>
+                    <span className="text-[#4DC9F6] text-sm">—</span>
                     <span className="text-sm text-white/80 leading-relaxed">
                       {item}
                     </span>

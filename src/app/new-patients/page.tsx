@@ -83,7 +83,7 @@ const faqs = [
 
 export default function NewPatientsPage() {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[{ name: "New Patients", href: "/new-patients" }]}
         eyebrow="Getting Started"
@@ -99,29 +99,29 @@ export default function NewPatientsPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href={PRACTICE.bookingUrl}
-              className="flex items-center justify-between bg-[#1F1A14] text-[#F8F4EC] rounded-2xl p-8 hover:bg-[#3D2E1F] transition-colors"
+              className="flex items-center justify-between bg-[#1B1F4B] text-[#F8F4EC] rounded-2xl p-8 hover:bg-[#0E1238] transition-colors"
             >
               <div>
-                <p className="text-xs tracking-[0.25em] uppercase text-[#E8C9A0] mb-2">
+                <p className="text-xs tracking-[0.25em] uppercase text-[#4DC9F6] mb-2">
                   — Book Online
                 </p>
                 <p className="font-editorial text-2xl">Schedule your visit</p>
               </div>
-              <ArrowUpRight className="h-6 w-6 text-[#E8C9A0]" />
+              <ArrowUpRight className="h-6 w-6 text-[#4DC9F6]" />
             </Link>
             <a
               href={PRACTICE.patientFormsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between bg-[#EADCC2] text-[#1F1A14] rounded-2xl p-8 hover:bg-[#D4C4A8] transition-colors"
+              className="flex items-center justify-between bg-[#EADCC2] text-[#1B1F4B] rounded-2xl p-8 hover:bg-[#D4C4A8] transition-colors"
             >
               <div>
-                <p className="text-xs tracking-[0.25em] uppercase text-[#8B6F4E] mb-2">
+                <p className="text-xs tracking-[0.25em] uppercase text-[#2D5DA1] mb-2">
                   — Intake Paperwork
                 </p>
                 <p className="font-editorial text-2xl">Complete forms</p>
               </div>
-              <ArrowUpRight className="h-6 w-6 text-[#8B6F4E]" />
+              <ArrowUpRight className="h-6 w-6 text-[#2D5DA1]" />
             </a>
           </div>
         </div>
@@ -131,22 +131,22 @@ export default function NewPatientsPage() {
       <section className="px-6 lg:px-10 py-20">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-12">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
               — The Process
             </p>
             <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05]">
               Four steps to<br />
-              <em className="italic text-[#8B6F4E]">get started.</em>
+              <em className="italic text-[#2D5DA1]">get started.</em>
             </h2>
           </div>
-          <div className="space-y-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
+          <div className="space-y-px bg-[#1B1F4B]/10 rounded-2xl overflow-hidden">
             {steps.map((step) => (
               <div
                 key={step.num}
                 className="bg-[#F8F4EC] p-8 lg:p-10 grid lg:grid-cols-12 gap-6"
               >
                 <div className="lg:col-span-2">
-                  <span className="font-editorial text-3xl text-[#1F1A14]/25">
+                  <span className="font-editorial text-3xl text-[#1B1F4B]/25">
                     {step.num}
                   </span>
                 </div>
@@ -154,7 +154,7 @@ export default function NewPatientsPage() {
                   <h3 className="font-editorial text-2xl">{step.title}</h3>
                 </div>
                 <div className="lg:col-span-6">
-                  <p className="text-[#1F1A14]/60 leading-relaxed">
+                  <p className="text-[#1B1F4B]/60 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -169,29 +169,29 @@ export default function NewPatientsPage() {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
                 — Preparation
               </p>
               <h2 className="font-editorial text-4xl lg:text-5xl leading-[1.05] mb-6">
                 What to<br />
-                <em className="italic text-[#8B6F4E]">bring.</em>
+                <em className="italic text-[#2D5DA1]">bring.</em>
               </h2>
-              <p className="text-[#1F1A14]/60 leading-relaxed">
+              <p className="text-[#1B1F4B]/60 leading-relaxed">
                 A little preparation helps your first visit go smoothly. Bring
                 these items (or have them ready for your telehealth visit).
               </p>
             </div>
             <div className="lg:col-span-7">
-              <div className="space-y-px bg-[#1F1A14]/10 rounded-2xl overflow-hidden">
+              <div className="space-y-px bg-[#1B1F4B]/10 rounded-2xl overflow-hidden">
                 {whatToBring.map((item, i) => (
                   <div
                     key={item}
                     className="bg-[#F8F4EC] p-5 flex items-center gap-5"
                   >
-                    <span className="font-editorial text-sm text-[#8B6F4E] w-6">
+                    <span className="font-editorial text-sm text-[#2D5DA1] w-6">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-[#1F1A14]/80">{item}</span>
+                    <span className="text-[#1B1F4B]/80">{item}</span>
                   </div>
                 ))}
               </div>
@@ -203,13 +203,13 @@ export default function NewPatientsPage() {
       {/* Call us / insurance helper */}
       <section className="px-6 lg:px-10 py-20">
         <div className="max-w-[1400px] mx-auto">
-          <div className="bg-[#1F1A14] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16 text-center">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#E8C9A0] mb-4">
+          <div className="bg-[#1B1F4B] text-[#F8F4EC] rounded-[2rem] p-10 lg:p-16 text-center">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#4DC9F6] mb-4">
               — Questions Before Booking?
             </p>
             <h2 className="font-editorial text-3xl lg:text-5xl leading-[1.05] mb-6">
               Give us a call.<br />
-              <em className="italic text-[#E8C9A0]">We&apos;re happy to help.</em>
+              <em className="italic text-[#4DC9F6]">We&apos;re happy to help.</em>
             </h2>
             <p className="text-white/60 max-w-xl mx-auto mb-8">
               Our team can answer questions about insurance, services, and
@@ -218,7 +218,7 @@ export default function NewPatientsPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={`tel:${PRACTICE.phoneRaw}`}
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[#F8F4EC] text-[#1F1A14] text-sm font-semibold hover:bg-white transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[#F8F4EC] text-[#1B1F4B] text-sm font-semibold hover:bg-white transition-colors"
               >
                 <Phone className="h-4 w-4" />
                 {PRACTICE.phone}

@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/conditions`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 },
     { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${BASE_URL}/new-patients`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE_URL}/psychiatrist-near-you`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 },
     { url: `${BASE_URL}/insurance`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
   ];

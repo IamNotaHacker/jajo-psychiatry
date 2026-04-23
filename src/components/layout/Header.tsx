@@ -7,13 +7,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { PRACTICE, NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useBooking } from "@/components/ui/BookingProvider";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { open: openBooking } = useBooking();
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F8F4EC]/90 backdrop-blur-md border-b border-[#1F1A14]/8">
+    <header className="sticky top-0 z-50 bg-[#F8F4EC]/90 backdrop-blur-md border-b border-[#1B1F4B]/8">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
@@ -23,7 +25,7 @@ export function Header() {
               alt="Jajo Psychiatry"
               width={240}
               height={60}
-              className="h-14 w-auto"
+              className="h-14 lg:h-[70px] w-auto"
               priority
             />
           </Link>
@@ -42,7 +44,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 py-2 text-sm text-[#1F1A14]/60 hover:text-[#1F1A14] transition-colors"
+                    "flex items-center gap-1 py-2 text-sm text-[#1B1F4B]/60 hover:text-[#1B1F4B] transition-colors"
                   )}
                 >
                   {item.label}
@@ -57,13 +59,13 @@ export function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-64 bg-[#F8F4EC] rounded-2xl shadow-2xl shadow-[#1F1A14]/10 border border-[#1F1A14]/8 py-3 z-50"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-64 bg-[#F8F4EC] rounded-2xl shadow-2xl shadow-[#1B1F4B]/10 border border-[#1B1F4B]/8 py-3 z-50"
                   >
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="flex items-center justify-between px-5 py-2.5 text-sm text-[#1F1A14]/70 hover:text-[#1F1A14] hover:bg-[#EADCC2]/40 transition-colors"
+                        className="flex items-center justify-between px-5 py-2.5 text-sm text-[#1B1F4B]/70 hover:text-[#1B1F4B] hover:bg-[#E3F0FA] transition-colors"
                       >
                         {child.label}
                         <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -79,23 +81,24 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-5">
             <a
               href={`tel:${PRACTICE.phoneRaw}`}
-              className="flex items-center gap-1.5 text-sm text-[#1F1A14]/60 hover:text-[#1F1A14] transition-colors"
+              className="flex items-center gap-1.5 text-sm text-[#1B1F4B]/60 hover:text-[#1B1F4B] transition-colors"
             >
               <Phone className="h-3.5 w-3.5" />
               {PRACTICE.phone}
             </a>
-            <Link
-              href={PRACTICE.bookingUrl}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium hover:bg-[#3D2E1F] transition-colors"
+            <button
+              type="button"
+              onClick={openBooking}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1B1F4B] text-[#F8F4EC] text-sm font-medium hover:bg-[#0E1238] transition-colors"
             >
               Book Visit
               <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
+            </button>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-[#1F1A14]"
+            className="lg:hidden p-2 text-[#1B1F4B]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
@@ -112,14 +115,14 @@ export function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden overflow-hidden bg-[#F8F4EC] border-t border-[#1F1A14]/8"
+            className="lg:hidden overflow-hidden bg-[#F8F4EC] border-t border-[#1B1F4B]/8"
           >
             <nav className="max-w-[1400px] mx-auto px-6 py-5 space-y-1">
               {NAV_ITEMS.map((item) => (
                 <div key={item.label}>
                   <Link
                     href={item.href}
-                    className="block px-3 py-2.5 text-base font-editorial text-[#1F1A14] rounded-lg transition-colors"
+                    className="block px-3 py-2.5 text-base font-editorial text-[#1B1F4B] rounded-lg transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     {item.label}
@@ -130,7 +133,7 @@ export function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-3 py-1.5 text-sm text-[#1F1A14]/60 hover:text-[#1F1A14] transition-colors"
+                          className="block px-3 py-1.5 text-sm text-[#1B1F4B]/60 hover:text-[#1B1F4B] transition-colors"
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
@@ -140,22 +143,25 @@ export function Header() {
                   )}
                 </div>
               ))}
-              <div className="pt-4 space-y-3 border-t border-[#1F1A14]/10 mt-4">
+              <div className="pt-4 space-y-3 border-t border-[#1B1F4B]/10 mt-4">
                 <a
                   href={`tel:${PRACTICE.phoneRaw}`}
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-[#1F1A14]/20 text-sm text-[#1F1A14]"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-[#1B1F4B]/20 text-sm text-[#1B1F4B]"
                 >
                   <Phone className="h-4 w-4" />
                   Call {PRACTICE.phone}
                 </a>
-                <Link
-                  href={PRACTICE.bookingUrl}
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#1F1A14] text-[#F8F4EC] text-sm font-medium"
-                  onClick={() => setMobileOpen(false)}
+                <button
+                  type="button"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#1B1F4B] text-[#F8F4EC] text-sm font-medium"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    openBooking();
+                  }}
                 >
                   Book Appointment
                   <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
+                </button>
               </div>
             </nav>
           </motion.div>

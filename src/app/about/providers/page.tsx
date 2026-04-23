@@ -380,7 +380,7 @@ export default function ProvidersPage() {
         title="Well established,"
         titleEm="here for you."
         description="Meet the experienced team of physician assistants, therapists, and physicians who carry on Dr. Raad Jajo's tradition of personalized, compassionate care."
-        image="/images/ai/window-new.jpg"
+        image="/images/ai/providers-hero.jpg"
       />
 
       {/* Founder callout */}

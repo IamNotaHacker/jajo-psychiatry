@@ -48,7 +48,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   );
 
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       {/* Header */}
       <section className="px-6 lg:px-10 pt-8 pb-14">
         <div className="max-w-[900px] mx-auto">
@@ -58,15 +58,15 @@ export default async function BlogPostPage({ params }: PageProps) {
               { name: post.title, href: `/blog/${post.slug}` },
             ]}
           />
-          <div className="flex items-center gap-4 mt-6 mb-6 text-xs tracking-wider uppercase text-[#8B6F4E]">
+          <div className="flex items-center gap-4 mt-6 mb-6 text-xs tracking-wider uppercase text-[#2D5DA1]">
             <span>— {post.category}</span>
-            <span className="text-[#1F1A14]/20">/</span>
-            <span className="flex items-center gap-1 text-[#1F1A14]/50">
+            <span className="text-[#1B1F4B]/20">/</span>
+            <span className="flex items-center gap-1 text-[#1B1F4B]/50">
               <Clock className="h-3 w-3" />
               {post.readTime}
             </span>
-            <span className="text-[#1F1A14]/20">/</span>
-            <span className="flex items-center gap-1 text-[#1F1A14]/50">
+            <span className="text-[#1B1F4B]/20">/</span>
+            <span className="flex items-center gap-1 text-[#1B1F4B]/50">
               <Calendar className="h-3 w-3" />
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",
@@ -75,10 +75,10 @@ export default async function BlogPostPage({ params }: PageProps) {
               })}
             </span>
           </div>
-          <h1 className="font-editorial text-4xl sm:text-5xl lg:text-[4rem] leading-[1.05] text-[#1F1A14] mb-6">
+          <h1 className="font-editorial text-4xl sm:text-5xl lg:text-[4rem] leading-[1.05] text-[#1B1F4B] mb-6">
             {post.title}
           </h1>
-          <p className="text-xl text-[#1F1A14]/60 leading-relaxed max-w-2xl">
+          <p className="text-xl text-[#1B1F4B]/60 leading-relaxed max-w-2xl">
             {post.description}
           </p>
         </div>
@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-[1fr_300px] gap-16">
             {/* Article */}
-            <article className="prose prose-lg max-w-none prose-headings:font-editorial prose-headings:text-[#1F1A14] prose-p:text-[#1F1A14]/75 prose-p:leading-relaxed prose-li:text-[#1F1A14]/75 prose-strong:text-[#1F1A14] prose-a:text-[#8B6F4E] prose-a:no-underline hover:prose-a:underline max-w-[680px]">
+            <article className="prose prose-lg max-w-none prose-headings:font-editorial prose-headings:text-[#1B1F4B] prose-p:text-[#1B1F4B]/75 prose-p:leading-relaxed prose-li:text-[#1B1F4B]/75 prose-strong:text-[#1B1F4B] prose-a:text-[#2D5DA1] prose-a:no-underline hover:prose-a:underline max-w-[680px]">
               {post.content.split("\n\n").map((paragraph, i) => {
                 if (paragraph.startsWith("## ")) {
                   return (
@@ -133,8 +133,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Sidebar */}
             <aside className="space-y-5 hidden lg:block">
-              <div className="bg-[#1F1A14] text-[#F8F4EC] rounded-2xl p-6 sticky top-28">
-                <p className="text-xs tracking-[0.25em] uppercase text-[#E8C9A0] mb-3">
+              <div className="bg-[#1B1F4B] text-[#F8F4EC] rounded-2xl p-6 sticky top-28">
+                <p className="text-xs tracking-[0.25em] uppercase text-[#4DC9F6] mb-3">
                   — Need Help?
                 </p>
                 <p className="font-editorial text-2xl leading-[1.15] mb-5">
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </p>
                 <Link
                   href={PRACTICE.bookingUrl}
-                  className="flex items-center justify-between px-5 py-3 rounded-full bg-[#F8F4EC] text-[#1F1A14] text-sm font-semibold mb-3"
+                  className="flex items-center justify-between px-5 py-3 rounded-full bg-[#F8F4EC] text-[#1B1F4B] text-sm font-semibold mb-3"
                 >
                   Book Appointment
                   <ArrowUpRight className="h-4 w-4" />
@@ -164,7 +164,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         <li key={service.slug}>
                           <Link
                             href={`/services/${service.slug}`}
-                            className="text-sm text-[#E8C9A0] hover:text-white flex items-center gap-1.5"
+                            className="text-sm text-[#4DC9F6] hover:text-white flex items-center gap-1.5"
                           >
                             <span>—</span>
                             {service.title}
@@ -185,7 +185,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         <li key={condition.slug}>
                           <Link
                             href={`/conditions/${condition.slug}`}
-                            className="text-sm text-[#E8C9A0] hover:text-white flex items-center gap-1.5"
+                            className="text-sm text-[#4DC9F6] hover:text-white flex items-center gap-1.5"
                           >
                             <span>—</span>
                             {condition.title}
@@ -201,8 +201,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {/* Related posts */}
           {relatedPosts.length > 0 && (
-            <div className="mt-20 pt-14 border-t border-[#1F1A14]/10">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-3">
+            <div className="mt-20 pt-14 border-t border-[#1B1F4B]/10">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-3">
                 — More Reading
               </p>
               <h2 className="font-editorial text-3xl lg:text-4xl mb-10">
@@ -215,13 +215,13 @@ export default async function BlogPostPage({ params }: PageProps) {
                     href={`/blog/${related.slug}`}
                     className="group bg-[#EADCC2]/40 hover:bg-[#EADCC2] rounded-2xl p-6 transition-colors"
                   >
-                    <span className="text-xs tracking-wider uppercase text-[#8B6F4E]">
+                    <span className="text-xs tracking-wider uppercase text-[#2D5DA1]">
                       — {related.category}
                     </span>
-                    <h3 className="font-editorial text-xl text-[#1F1A14] mt-3 mb-2 line-clamp-2">
+                    <h3 className="font-editorial text-xl text-[#1B1F4B] mt-3 mb-2 line-clamp-2">
                       {related.title}
                     </h3>
-                    <p className="text-sm text-[#1F1A14]/60 line-clamp-2">
+                    <p className="text-sm text-[#1B1F4B]/60 line-clamp-2">
                       {related.description}
                     </p>
                   </Link>
@@ -234,7 +234,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="mt-14">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#1F1A14]/70 hover:text-[#1F1A14]"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#1B1F4B]/70 hover:text-[#1B1F4B]"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Journal

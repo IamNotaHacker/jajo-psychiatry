@@ -23,7 +23,7 @@ const conditionImages: Record<string, string> = {
 
 export default function ConditionsPage() {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[{ name: "Conditions", href: "/conditions" }]}
         eyebrow="What We Treat"
@@ -49,12 +49,12 @@ export default function ConditionsPage() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1F1A14]/85 via-[#1F1A14]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1B1F4B]/85 via-[#1B1F4B]/20 to-transparent" />
                 <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
-                  <span className="text-xs tracking-wider uppercase text-[#E8C9A0]">
+                  <span className="text-xs tracking-wider uppercase text-[#4DC9F6]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <ArrowUpRight className="h-5 w-5 text-[#E8C9A0] group-hover:rotate-45 transition-transform" />
+                  <ArrowUpRight className="h-5 w-5 text-[#4DC9F6] group-hover:rotate-45 transition-transform" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h2 className="font-editorial text-3xl mb-2 leading-[1.1]">
@@ -75,50 +75,50 @@ export default function ConditionsPage() {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#1F1A14]/50 mb-4">
+              <p className="text-xs tracking-[0.3em] uppercase text-[#1B1F4B]/50 mb-4">
                 — Our Approach
               </p>
             </div>
             <div className="lg:col-span-8">
               <p className="font-editorial text-3xl lg:text-[2.5rem] leading-[1.2] mb-6">
                 Treatment always begins with a{" "}
-                <em className="italic text-[#8B6F4E]">
+                <em className="italic text-[#2D5DA1]">
                   thorough psychiatric evaluation
                 </em>
                 .
               </p>
-              <p className="text-[#1F1A14]/60 leading-relaxed mb-4">
+              <p className="text-[#1B1F4B]/60 leading-relaxed mb-4">
                 From there, we develop a personalized plan that may include{" "}
                 <Link
                   href="/services/medication-management"
-                  className="underline underline-offset-4 decoration-[#8B6F4E] hover:text-[#1F1A14]"
+                  className="underline underline-offset-4 decoration-[#2D5DA1] hover:text-[#1B1F4B]"
                 >
                   medication management
                 </Link>
                 ,{" "}
                 <Link
                   href="/services/genesight-testing"
-                  className="underline underline-offset-4 decoration-[#8B6F4E] hover:text-[#1F1A14]"
+                  className="underline underline-offset-4 decoration-[#2D5DA1] hover:text-[#1B1F4B]"
                 >
                   GeneSight genetic testing
                 </Link>{" "}
                 to guide medication choices, and ongoing follow-up care through{" "}
                 <Link
                   href="/services/in-person-psychiatry"
-                  className="underline underline-offset-4 decoration-[#8B6F4E] hover:text-[#1F1A14]"
+                  className="underline underline-offset-4 decoration-[#2D5DA1] hover:text-[#1B1F4B]"
                 >
                   in-person
                 </Link>{" "}
                 or{" "}
                 <Link
                   href="/services/telepsychiatry"
-                  className="underline underline-offset-4 decoration-[#8B6F4E] hover:text-[#1F1A14]"
+                  className="underline underline-offset-4 decoration-[#2D5DA1] hover:text-[#1B1F4B]"
                 >
                   telepsychiatry
                 </Link>{" "}
                 visits.
               </p>
-              <p className="text-[#1F1A14]/60 leading-relaxed">
+              <p className="text-[#1B1F4B]/60 leading-relaxed">
                 We serve patients across Michigan. New patients are typically
                 seen within one week.
               </p>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="bg-[#F8F4EC] text-[#1F1A14]">
+    <div className="bg-[#F8F4EC] text-[#1B1F4B]">
       <PageHero
         breadcrumbs={[{ name: "Journal", href: "/blog" }]}
         eyebrow="The Journal"
@@ -27,7 +27,7 @@ export default function BlogPage() {
       <section className="px-6 lg:px-10 py-20">
         <div className="max-w-[1400px] mx-auto">
           {blogPosts.length === 0 ? (
-            <p className="text-[#1F1A14]/60 text-center py-20">
+            <p className="text-[#1B1F4B]/60 text-center py-20">
               New posts coming soon.
             </p>
           ) : (
@@ -40,30 +40,30 @@ export default function BlogPage() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                      <span className="text-xs tracking-wider uppercase text-[#8B6F4E]">
+                      <span className="text-xs tracking-wider uppercase text-[#2D5DA1]">
                         {String(i + 1).padStart(2, "0")} &middot; {post.category}
                       </span>
-                      <span className="flex items-center gap-1 text-xs text-[#1F1A14]/50">
+                      <span className="flex items-center gap-1 text-xs text-[#1B1F4B]/50">
                         <Clock className="h-3 w-3" />
                         {post.readTime}
                       </span>
                     </div>
-                    <h2 className="font-editorial text-2xl leading-[1.15] text-[#1F1A14] mb-3 line-clamp-3">
+                    <h2 className="font-editorial text-2xl leading-[1.15] text-[#1B1F4B] mb-3 line-clamp-3">
                       {post.title}
                     </h2>
-                    <p className="text-sm text-[#1F1A14]/60 leading-relaxed line-clamp-3">
+                    <p className="text-sm text-[#1B1F4B]/60 leading-relaxed line-clamp-3">
                       {post.description}
                     </p>
                   </div>
                   <div className="flex items-center justify-between pt-8 mt-auto">
-                    <time className="text-xs text-[#1F1A14]/40">
+                    <time className="text-xs text-[#1B1F4B]/40">
                       {new Date(post.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
                         day: "numeric",
                       })}
                     </time>
-                    <ArrowUpRight className="h-4 w-4 text-[#8B6F4E] group-hover:rotate-45 transition-transform" />
+                    <ArrowUpRight className="h-4 w-4 text-[#2D5DA1] group-hover:rotate-45 transition-transform" />
                   </div>
                 </Link>
               ))}

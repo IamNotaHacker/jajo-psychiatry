@@ -53,7 +53,7 @@ export default function AboutPage() {
         title="Psychiatric care, offered with"
         titleEm="patience."
         description="Personalized, evidence-based psychiatric care for adults throughout Michigan. Clinical expertise, genuine compassion."
-        image="/images/ai/window-new.jpg"
+        image="/images/ai/practice-hero.jpg"
       />
 
       {/* Mission */}
