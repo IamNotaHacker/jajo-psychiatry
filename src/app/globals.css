@@ -77,8 +77,13 @@ body {
   font-feature-settings: "ss01", "ss02";
 }
 
-html {
-  scroll-behavior: smooth;
+/* Only apply smooth scroll to in-page anchor clicks, not programmatic scroll.
+   WebKit (iOS Safari/Chrome) silently ignores scrollTo when scroll-behavior:smooth
+   is on the root (bug 238497), which breaks route-change scroll-to-top. */
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
 }
 
 *:focus-visible {

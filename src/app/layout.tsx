@@ -78,7 +78,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-scroll-behavior="smooth"
       className={`${jakarta.variable} ${playfair.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">

@@ -14,6 +14,21 @@ export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const { open: openBooking } = useBooking();
 
+  // iOS Safari/Chrome swallow post-navigation scrollTo when scroll-behavior:smooth is active.
+  // Force the scroll inside the user-gesture tick when a mobile menu link is tapped.
+  const closeAndScroll = () => {
+    setMobileOpen(false);
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    html.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    requestAnimationFrame(() => {
+      html.style.scrollBehavior = prev;
+    });
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-[#F8F4EC]/90 backdrop-blur-md border-b border-[#1B1F4B]/8">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
@@ -123,7 +138,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     className="block px-3 py-2.5 text-base font-editorial text-[#1B1F4B] rounded-lg transition-colors"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={closeAndScroll}
                   >
                     {item.label}
                   </Link>
@@ -134,7 +149,7 @@ export function Header() {
                           key={child.href}
                           href={child.href}
                           className="block px-3 py-1.5 text-sm text-[#1B1F4B]/60 hover:text-[#1B1F4B] transition-colors"
-                          onClick={() => setMobileOpen(false)}
+                          onClick={closeAndScroll}
                         >
                           {child.label}
                         </Link>
